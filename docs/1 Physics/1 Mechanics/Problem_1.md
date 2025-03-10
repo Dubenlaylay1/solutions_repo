@@ -69,7 +69,7 @@ This equation shows that:
 
 We will analyze how the range depends on the launch angle using a computational approach.
 
-## 3. Implementation (Python Simulation)
+## 3. Implementation 
 
 Below is a Python script to simulate and visualize the range as a function of the launch angle.
 
