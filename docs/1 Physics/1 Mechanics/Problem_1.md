@@ -14,23 +14,23 @@ The motion of a projectile launched from the ground at an initial speed $v_0$ an
 
 **Horizontal Motion:**
 
-$$ x = v_0 \cos(\theta) t $$
+$$x = v_0 \cos(\theta) t$$
 
 **Vertical Motion:**
 
-$$ y = v_0 \sin(\theta) t - \frac{1}{2}gt^2 $$
+$$y = v_0 \sin(\theta) t - \frac{1}{2}gt^2$$
 
 
 
 where:
 
-- $$ v_0 $$ is the initial velocity (m/s),
+- $$v_0$$ is the initial velocity (m/s),
 
-- $$ \theta $$ is the launch angle (degrees),
+- $$\theta$$ is the launch angle (degrees),
 
-- $$ g $$ is the acceleration due to gravity (9.81 m/s²),
+- $$g$$ is the acceleration due to gravity (9.81 m/s²),
 
-- $$ t $$ is the time (s).
+- $$t$$ is the time (s).
 
 ### Derivation of the Range Formula
 
