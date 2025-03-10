@@ -34,11 +34,11 @@ where:
 
 ### Derivation of the Range Formula
 
-To find the range $$ R $$, we first determine the total time of flight by setting $$ y = 0 $$:
+To find the range $$R$$, we first determine the total time of flight by setting $$y = 0$$:
 
 
 
-$$ t = \frac{2v_0 \sin(\theta)}{g} $$
+$$t = \frac{2v_0 \sin(\theta)}{g}$$
 
 
 
@@ -46,13 +46,13 @@ Substituting this into the horizontal motion equation:
 
 
 
-$$ R = v_0 \cos(\theta) \cdot \frac{2v_0 \sin(\theta)}{g} $$
+$$R = v_0 \cos(\theta) \cdot \frac{2v_0 \sin(\theta)}{g}$$
 
 
 
 
 
-$$ R = \frac{v_0^2 \sin(2\theta)}{g} $$
+$$R = \frac{v_0^2 \sin(2\theta)}{g}$$
 
 
 
