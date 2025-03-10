@@ -14,7 +14,7 @@ The motion of a projectile launched from the ground at an initial speed $v_0$ an
 
 **Horizontal Motion:**
 
-$ x = v_0 \cos(\theta) t $
+$$ x = v_0 \cos(\theta) t $$
 
 **Vertical Motion:**
 
