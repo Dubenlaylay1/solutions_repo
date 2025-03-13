@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>PROBLEM 1 - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "PROBLEM 1";
         var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -46,30 +46,8 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal current">1 Mechanics</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">PROBLEM 1</a>
 <ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#1-theoretical-foundation">1. Theoretical Foundation</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#equations-of-motion">Equations of Motion</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#derivation-of-the-range-formula">Derivation of the Range Formula</a>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#2-analysis-of-the-range">2. Analysis of the Range</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#3-implementation">3. Implementation</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#4-results-and-discussion">4. Results and Discussion</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#5-practical-applications">5. Practical Applications</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#6-limitations-and-further-improvements">6. Limitations and Further Improvements</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a>
-</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -185,7 +163,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">1 Mechanics</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">PROBLEM 1</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -193,7 +171,7 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<p># PROBLEM 1</p>
+<h1 id="problem-1">PROBLEM 1</h1>
 <h1 id="investigating-the-range-as-a-function-of-the-angle-of-projection">Investigating the Range as a Function of the Angle of Projection</h1>
 <h2 id="motivation">Motivation</h2>
 <p>Projectile motion, while seemingly simple, offers a rich playground for exploring fundamental principles of physics. The problem is straightforward: analyze how the range of a projectile depends on its angle of projection. This study helps us understand various real-world applications, such as ballistics, sports science, and engineering problems.</p>
@@ -201,74 +179,51 @@
 <p>The motion of a projectile launched from the ground at an initial speed <span class="arithmatex">\(v_0\)</span> and an angle <span class="arithmatex">\(\theta\)</span> is governed by the equations of motion:</p>
 <h3 id="equations-of-motion">Equations of Motion</h3>
 <p><strong>Horizontal Motion:</strong></p>
-<div class="arithmatex">\[x = v_0 \cos(\theta) t\]</div>
+<p><span class="arithmatex">\(x = v_0 \cos(\theta) t\)</span></p>
 <p><strong>Vertical Motion:</strong></p>
-<div class="arithmatex">\[y = v_0 \sin(\theta) t - \frac{1}{2}gt^2\]</div>
+<p>$ y = v_0 \sin(\theta) t - \frac{1}{2}gt^2 $</p>
 <p>where:</p>
 <ul>
-<li>
-<p><span class="arithmatex">\(<span class="arithmatex">\(v_0\)</span>\)</span> is the initial velocity (m/s),</p>
-</li>
-<li>
-<p><span class="arithmatex">\(<span class="arithmatex">\(\theta\)</span>\)</span> is the launch angle (degrees),</p>
-</li>
-<li>
-<p><span class="arithmatex">\(<span class="arithmatex">\(g\)</span>\)</span> is the acceleration due to gravity (9.81 m/s²),</p>
-</li>
-<li>
-<p><span class="arithmatex">\(<span class="arithmatex">\(t\)</span>\)</span> is the time (s).</p>
-</li>
+<li><span class="arithmatex">\(v_0\)</span> is the initial velocity (m/s),</li>
+<li><span class="arithmatex">\(\theta\)</span> is the launch angle (degrees),</li>
+<li><span class="arithmatex">\(g\)</span> is the acceleration due to gravity (9.81 m/s²),</li>
+<li><span class="arithmatex">\(t\)</span> is the time (s).</li>
 </ul>
 <h3 id="derivation-of-the-range-formula">Derivation of the Range Formula</h3>
-<p>To find the range <span class="arithmatex">\(<span class="arithmatex">\(R\)</span>\)</span>, we first determine the total time of flight by setting <span class="arithmatex">\(<span class="arithmatex">\(y = 0\)</span>\)</span>:</p>
-<div class="arithmatex">\[t = \frac{2v_0 \sin(\theta)}{g}\]</div>
+<p>To find the range $ R $, we first determine the total time of flight by setting $ y = 0 $:</p>
+<p>$ t = \frac{2v_0 \sin(\theta)}{g} $</p>
 <p>Substituting this into the horizontal motion equation:</p>
-<div class="arithmatex">\[R = v_0 \cos(\theta) \cdot \frac{2v_0 \sin(\theta)}{g}\]</div>
-<div class="arithmatex">\[R = \frac{v_0^2 \sin(2\theta)}{g}\]</div>
+<p>$ R = v_0 \cos(\theta) \cdot \frac{2v_0 \sin(\theta)}{g} $</p>
+<p>$ R = \frac{v_0^2 \sin(2\theta)}{g} $</p>
 <p>This equation shows that:</p>
 <ul>
-<li>
-<p>The maximum range occurs at <span class="arithmatex">\(<span class="arithmatex">\(\theta = 45°\)</span>\)</span>.</p>
-</li>
-<li>
-<p>The range is symmetric around 45° (i.e., 0 and 90° -  give the same range).</p>
-</li>
-<li>
-<p>Higher initial velocity increases the range.</p>
-</li>
+<li>The maximum range occurs at <span class="arithmatex">\(\theta = 45°\)</span>.</li>
+<li>The range is symmetric around 45° (i.e., 0 and 90° -  give the same range).</li>
+<li>Higher initial velocity increases the range.</li>
 </ul>
 <h2 id="2-analysis-of-the-range">2. Analysis of the Range</h2>
 <p>We will analyze how the range depends on the launch angle using a computational approach.</p>
-<h2 id="3-implementation">3. Implementation</h2>
+<h2 id="3-implementation-python-simulation">3. Implementation (Python Simulation)</h2>
 <p>Below is a Python script to simulate and visualize the range as a function of the launch angle.</p>
-<p>https://colab.research.google.com/drive/1f7K3sSSgZ2bpgStDb-Z8ROfXPNHrlTRw?usp=sharing</p>
+<ul>
+<li>Visit <a href="https://colab.research.google.com/drive/1f7K3sSSgZ2bpgStDb-Z8ROfXPNHrlTRw?usp=sharing">colab</a></li>
+</ul>
+<p><img alt="alt text" src="../image.png"/></p>
 <h2 id="4-results-and-discussion">4. Results and Discussion</h2>
 <p>The plot shows that the range is maximum at 45°.</p>
 <p>Higher initial velocity shifts the curve upwards, increasing the range.</p>
 <h2 id="5-practical-applications">5. Practical Applications</h2>
 <p>This model can be adapted for various real-world applications:</p>
 <ul>
-<li>
-<p><strong>Sports Science</strong>: Calculating optimal angles for throwing or kicking a ball.</p>
-</li>
-<li>
-<p><strong>Ballistics</strong>: Designing projectile trajectories for military and engineering purposes.</p>
-</li>
-<li>
-<p><strong>Space Exploration</strong>: Computing launch angles for rockets and satellites.</p>
-</li>
+<li><strong>Sports Science</strong>: Calculating optimal angles for throwing or kicking a ball.</li>
+<li><strong>Ballistics</strong>: Designing projectile trajectories for military and engineering purposes.</li>
+<li><strong>Space Exploration</strong>: Computing launch angles for rockets and satellites.</li>
 </ul>
 <h2 id="6-limitations-and-further-improvements">6. Limitations and Further Improvements</h2>
 <ul>
-<li>
-<p><strong>Air Resistance</strong>: The model assumes no air resistance, which is unrealistic for real-world projectiles.</p>
-</li>
-<li>
-<p><strong>Uneven Terrain</strong>: The analysis assumes a flat ground; including varying terrain would improve accuracy.</p>
-</li>
-<li>
-<p><strong>Wind Effects</strong>: External forces such as wind can significantly alter the trajectory.</p>
-</li>
+<li><strong>Air Resistance</strong>: The model assumes no air resistance, which is unrealistic for real-world projectiles.</li>
+<li><strong>Uneven Terrain</strong>: The analysis assumes a flat ground; including varying terrain would improve accuracy.</li>
+<li><strong>Wind Effects</strong>: External forces such as wind can significantly alter the trajectory.</li>
 </ul>
 <h2 id="conclusion">Conclusion</h2>
 <p>This analysis provides insights into how projectile range depends on launch angle. Future improvements could incorporate air resistance, wind effects, and variable gravity to create a more realistic model.</p>
