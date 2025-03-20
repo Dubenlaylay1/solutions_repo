@@ -202,7 +202,45 @@
 <li>Higher initial velocity increases the range.</li>
 </ul>
 <h2 id="2-analysis-of-the-range">2. Analysis of the Range</h2>
-<p>We will analyze how the range depends on the launch angle using a computational approach.</p>
+<h2 id="2-range-analysis">2. Range Analysis</h2>
+<h3 id="21-dependence-of-range-on-angle-of-projection">2.1 Dependence of Range on Angle of Projection</h3>
+<p>The horizontal range <span class="arithmatex">\(R\)</span> of a projectile, given by the equation:</p>
+<div class="arithmatex">\[R = \frac{v_0^2 \sin(2\theta)}{g}\]</div>
+<p>shows a clear dependence on the launch angle <span class="arithmatex">\(\theta\)</span>. This equation indicates that:</p>
+<ul>
+<li>The range reaches its maximum when <span class="arithmatex">\(\sin(2\theta)\)</span> is maximized, which occurs at <span class="arithmatex">\(\theta = 45^\circ\)</span>, or <span class="arithmatex">\(\frac{\pi}{4}\)</span>.</li>
+<li>The range is symmetric around <span class="arithmatex">\(45^\circ\)</span>, meaning that launch angles equidistant from <span class="arithmatex">\(45^\circ\)</span> (e.g., <span class="arithmatex">\(30^\circ\)</span> and <span class="arithmatex">\(60^\circ\)</span>) yield the same range.</li>
+<li>At extreme angles (<span class="arithmatex">\(0^\circ\)</span> and <span class="arithmatex">\(90^\circ\)</span>), the range is zero, as the projectile either remains on the ground or moves vertically without horizontal displacement.</li>
+</ul>
+<h3 id="22-influence-of-other-parameters-on-range">2.2 Influence of Other Parameters on Range</h3>
+<p>Beyond the launch angle, other parameters such as initial velocity and gravitational acceleration significantly affect the range.</p>
+<h4 id="initial-velocity">Initial Velocity</h4>
+<p>The range is proportional to the square of the initial velocity:</p>
+<div class="arithmatex">\[R \propto v_0^2\]</div>
+<p>This implies that:</p>
+<ul>
+<li>Increasing <span class="arithmatex">\(v_0\)</span> increases the range quadratically, meaning that doubling the initial velocity results in a fourfold increase in range.</li>
+<li>Decreasing <span class="arithmatex">\(v_0\)</span> reduces the range significantly.</li>
+</ul>
+<p>This is particularly important in applications like sports and ballistics, where optimizing the launch speed enhances performance.</p>
+<h4 id="gravitational-acceleration">Gravitational Acceleration</h4>
+<p>The range is inversely proportional to gravitational acceleration:</p>
+<div class="arithmatex">\[R \propto \frac{1}{g}\]</div>
+<p>This means that:</p>
+<ul>
+<li>A lower gravitational force (e.g., on the Moon or Mars) increases the range.</li>
+<li>A higher gravitational force (e.g., on Jupiter) decreases the range.</li>
+</ul>
+<p>This principle is critical in space exploration, where launch trajectories must account for varying gravitational conditions on different celestial bodies.</p>
+<h3 id="23-computational-visualization">2.3 Computational Visualization</h3>
+<p>A Python simulation can illustrate how the range varies with angle, initial velocity, and gravity. By plotting <span class="arithmatex">\(R\)</span> as a function of <span class="arithmatex">\(\theta\)</span> for different values of <span class="arithmatex">\(v_0\)</span> and <span class="arithmatex">\(g\)</span>, we can observe trends and optimize projectile launches in real-world applications.</p>
+<h3 id="24-practical-insights-and-applications">2.4 Practical Insights and Applications</h3>
+<ul>
+<li><strong>Sports Science</strong>: Athletes in javelin, shot put, and soccer can optimize their throwing angles for maximum distance.</li>
+<li><strong>Ballistics</strong>: Military engineers can use these principles to design projectiles with optimal trajectories.</li>
+<li><strong>Space Exploration</strong>: Space agencies consider gravitational differences when calculating launch angles for interplanetary missions.</li>
+</ul>
+<p>By understanding these dependencies, we can better control and optimize projectile motion in various fields, ensuring efficiency and accuracy in real-world applications.</p>
 <h2 id="3-implementation-python-simulation">3. Implementation (Python Simulation)</h2>
 <p>Below is a Python script to simulate and visualize the range as a function of the launch angle.</p>
 <ul>
