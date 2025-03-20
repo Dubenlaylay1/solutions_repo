@@ -135,10 +135,10 @@ The forced damped pendulum model is not just a theoretical curiosity—it has di
 
 ### Graphical Results
 
-- **Low \(A\), \(\omega \approx \sqrt{g/L}\)**: Periodic motion with resonance.  
+- **Low $A$, $\omega \approx \sqrt{g/L}$**: Periodic motion with resonance.  
   The pendulum exhibits regular, sinusoidal oscillations amplified by resonance when the driving frequency matches the natural frequency, modified by damping.
 
-- **High \(A\), Nonlinear Regime**: Scattered Poincaré points indicate chaos.  
+- **High $A$, Nonlinear Regime**: Scattered Poincaré points indicate chaos.  
   Large driving amplitudes push the system into a chaotic state, where trajectories become unpredictable, as seen in the irregular distribution of points in Poincaré sections.
 
 ### Discussion
@@ -147,8 +147,8 @@ The forced damped pendulum model is not just a theoretical curiosity—it has di
 
 - The model assumes a constant driving force and neglects friction variations or air resistance changes.  
   Real-world conditions may introduce time-varying or nonlinear dissipative effects not captured here.
-- Small-angle approximations fail for large \(\theta\), requiring numerical methods.  
-  The linear approximation (\(\sin\theta \approx \theta\)) breaks down for significant displacements, necessitating computational solutions.
+- Small-angle approximations fail for large $\theta$, requiring numerical methods.  
+  The linear approximation $\sin\theta \approx \theta$ breaks down for significant displacements, necessitating computational solutions.
 
 #### Extensions
 
