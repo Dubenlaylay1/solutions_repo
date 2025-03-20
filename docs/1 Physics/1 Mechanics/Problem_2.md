@@ -164,4 +164,4 @@ The forced damped pendulum model is not just a theoretical curiosity—it has di
 - **Poincaré Sections**: Single points for periodic motion, scattered for chaos.  
   Sampling at the driving period reveals fixed points for synchronized motion and a disordered spread for chaotic regimes.
 - **Bifurcation Diagrams**: Plot $\theta$ at fixed $t$ vs. $A$ or $\omega$ to map transitions.  
-  These diagrams illustrate how the system evolves from periodicity to chaos as parameters change, highlighting period-doubling or sudden shifts
+  These diagrams illustrate how the system evolves from periodicity to chaos as parameters change, highlighting period-doubling or sudden shifts.
