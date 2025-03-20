@@ -131,7 +131,8 @@ The forced damped pendulum model is not just a theoretical curiosity—it has di
 
 [colab](blob:null/922c24c6-3b6b-4f44-a819-e6fef67e6765)
 
-[colab2](image-1.png)
+
+
 ### Graphical Results
 
 - **Low \(A\), \(\omega \approx \sqrt{g/L}\)**: Periodic motion with resonance.  
