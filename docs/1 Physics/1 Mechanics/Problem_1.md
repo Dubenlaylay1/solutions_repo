@@ -174,9 +174,9 @@ By understanding these dependencies, we can better control and optimize projecti
 
 Below is a Python script to simulate and visualize the range as a function of the launch angle.
 
-- Visit [colab](https://colab.research.google.com/drive/1f7K3sSSgZ2bpgStDb-Z8ROfXPNHrlTRw?usp=sharing)
+- Visit [colab]() I still can't fix the code
 
-![alt text](image.png)
+![alt text](image-2.png)
 
 ## 4. Results and Discussion
 
