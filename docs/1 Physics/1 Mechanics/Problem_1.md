@@ -66,6 +66,39 @@ This equation shows that:
 - The range is symmetric around 45° (i.e., 0 and 90° -  give the same range).
 - Higher initial velocity increases the range.
 
+### Differential Equations for Projectile Motion
+
+Projectile motion can also be analyzed using differential equations. The equations of motion arise from Newton’s Second Law:
+
+$$m \frac{d^2 x}{dt^2} = 0$$
+
+
+$$m \frac{d^2 y}{dt^2} = -mg$$
+
+Since there are no horizontal forces (assuming no air resistance), the horizontal motion follows:
+
+$$\frac{d^2 x}{dt^2} = 0$$
+
+which implies a constant velocity:
+
+$$\frac{dx}{dt} = v_0 \cos(\theta)$$
+
+For vertical motion, gravity acts as an accelerating force:
+
+
+$$\frac{d^2 y}{dt^2} = -g$$
+
+Integrating once gives the velocity equation:
+
+
+$$\frac{dy}{dt} = v_0 \sin(\theta) - g t$$
+
+Integrating again gives the position equation:
+
+$$y = v_0 \sin(\theta) t - \frac{1}{2} g t^2$$
+
+These equations describe the trajectory of a projectile and are fundamental in understanding motion under gravity.
+
 ## 2. Analysis of the Range
 
 ## 2. Range Analysis
