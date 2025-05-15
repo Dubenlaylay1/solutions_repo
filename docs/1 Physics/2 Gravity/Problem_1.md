@@ -69,9 +69,11 @@ To compute Earth's mass.
 
 [colab](https://colab.research.google.com/drive/1g2MB1rM0RoVmhZf8MjDkgUbHgoJWb3dO#scrollTo=Tj5SpZEEFrD_)
 
-
+![alt text](image.png)
 
 [Visualizing Circular Orbits](https://colab.research.google.com/drive/1bfOUd1E5QutzGK7wNj2TD0QKW8mN3dK1#scrollTo=knAj2HZ7IF-z)
+
+![alt text](image-4.png)
 
 ##  Extension to Elliptical Orbits
 
