@@ -1,7 +1,7 @@
 # Problem 1
-# 🌌 Problem 1: Orbital Period and Orbital Radius
+#  Problem 1: Orbital Period and Orbital Radius
 
-## ✍️ Derivation of Kepler's Third Law (Circular Orbits)
+##  Derivation of Kepler's Third Law (Circular Orbits)
 
 For a small body of mass  $m$ orbiting a much larger body of mass $M$, we assume a **circular orbit**.
 
