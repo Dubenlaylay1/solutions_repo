@@ -172,6 +172,95 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-3">Problem 3</h1>
+<h1 id="trajectories-of-a-freely-released-payload-near-earth"><strong>Trajectories of a Freely Released Payload Near Earth</strong></h1>
+<h2 id="1-introduction-and-motivation"><strong>1. Introduction and Motivation</strong></h2>
+<p>In the realm of spaceflight and orbital mechanics, understanding how objects behave when released from a spacecraft near Earth is critical. A payload released from a moving rocket can follow drastically different paths depending on its velocity, altitude, and direction at the moment of release.</p>
+<p>This analysis is relevant to a variety of space missions:
+- <strong>Satellite deployment</strong> in low Earth orbit (LEO), medium Earth orbit (MEO), or geostationary orbit (GEO)
+- <strong>Reentry missions</strong>, such as returning crew capsules or probes to Earth
+- <strong>Interplanetary missions</strong>, where the spacecraft must escape Earth’s gravity entirely</p>
+<p>The trajectory of the released payload can be parabolic, elliptical, circular, or hyperbolic. Which path it takes is governed by Newtonian gravity and orbital dynamics. These scenarios demonstrate the elegance and complexity of celestial mechanics and offer an excellent opportunity to apply numerical methods.</p>
+<hr/>
+<h2 id="2-theoretical-background"><strong>2. Theoretical Background</strong></h2>
+<h3 id="21-newtons-law-of-universal-gravitation"><strong>2.1 Newton's Law of Universal Gravitation</strong></h3>
+<p>Newton's law describes the force between two masses:</p>
+<p><span class="arithmatex">\(\vec{F} = -\frac{G M m}{r^2} \hat{r}\)</span></p>
+<p>Where:
+- <span class="arithmatex">\(\vec{F}\)</span>: gravitational force vector<br/>
+- <span class="arithmatex">\(G\)</span>: gravitational constant <span class="arithmatex">\(6.674 \times 10^{-11} \, \text{Nm}^2/\text{kg}^2\)</span><br/>
+- <span class="arithmatex">\(M\)</span>: mass of Earth <span class="arithmatex">\(5.972 \times 10^{24}\)</span> kg<br/>
+- <span class="arithmatex">\(m\)</span>: mass of payload<br/>
+- <span class="arithmatex">\(r\)</span>: distance from the center of the Earth<br/>
+- <span class="arithmatex">\(\hat{r}\)</span>: unit vector pointing from the payload to the center of the Earth  </p>
+<p>The resulting acceleration on the payload is:</p>
+<p><span class="arithmatex">\(\vec{a} = -\frac{GM}{r^2} \hat{r}\)</span></p>
+<hr/>
+<h3 id="22-types-of-trajectories"><strong>2.2 Types of Trajectories</strong></h3>
+<p>Orbital paths are conic sections, depending on the payload's total specific mechanical energy <span class="arithmatex">\((E)\)</span>:</p>
+<p><span class="arithmatex">\(E = \frac{v^2}{2} - \frac{GM}{r}\)</span></p>
+<ul>
+<li><strong>Circular Orbit</strong> <span class="arithmatex">\(E &lt; 0\)</span>, constant <span class="arithmatex">\(r\)</span>: payload moves at constant altitude and speed.</li>
+<li><strong>Elliptical Orbit</strong> <span class="arithmatex">\(E &lt; 0\)</span>: closed loop, apogee and perigee define min/max altitudes.</li>
+<li><strong>Parabolic Escape</strong> <span class="arithmatex">\(E = 0\)</span>: minimum speed needed to escape Earth's gravity.</li>
+<li><strong>Hyperbolic Trajectory</strong> <span class="arithmatex">\(E &gt; 0\)</span>: payload escapes Earth with excess velocity.</li>
+</ul>
+<hr/>
+<h2 id="3-numerical-method-and-simulation"><strong>3. Numerical Method and Simulation</strong></h2>
+<p><a href="https://colab.research.google.com/drive/1raWB9TNWxT8IPwkEpjn4Eet5dzij_V4j#scrollTo=ODDZ1N6_kte4">colab</a></p>
+<hr/>
+<h2 id="4-results-and-interpretation"><strong>4. Results and Interpretation</strong></h2>
+<h3 id="41-suborbital-trajectory"><strong>4.1 Suborbital Trajectory</strong></h3>
+<ul>
+<li>Initial speed: ~70% of circular orbital speed  </li>
+<li>Result: Payload arcs and returns to Earth (ballistic path)  </li>
+<li>Applications: Missile paths, failed orbital insertions</li>
+</ul>
+<h3 id="42-circular-orbit"><strong>4.2 Circular Orbit</strong></h3>
+<ul>
+<li>Initial speed: Just right to balance gravity and inertia  </li>
+<li>Result: Stable circular motion around Earth  </li>
+<li>Applications: Satellites, ISS</li>
+</ul>
+<h3 id="43-escape-trajectory"><strong>4.3 Escape Trajectory</strong></h3>
+<ul>
+<li>Initial speed: Greater than escape velocity  </li>
+<li>Result: Payload continues outward forever (ignoring other celestial bodies)  </li>
+<li>Applications: Deep space probes (Voyager, Pioneer, etc.)</li>
+</ul>
+<hr/>
+<h2 id="5-key-concepts-and-calculations"><strong>5. Key Concepts and Calculations</strong></h2>
+<h3 id="51-escape-velocity"><strong>5.1 Escape Velocity</strong></h3>
+<p>Escape velocity from a given altitude <span class="arithmatex">\(h\)</span>:</p>
+<p><span class="arithmatex">\(v_{esc} = \sqrt{2GM/(R + h)}\)</span></p>
+<p>From 300 km above Earth:  </p>
+<p><span class="arithmatex">\(v_{esc} \approx 11.2 \text{ km/s}\)</span></p>
+<h3 id="52-orbital-energy"><strong>5.2 Orbital Energy</strong></h3>
+<p>Total mechanical energy per unit mass:</p>
+<p><span class="arithmatex">\(E = \frac{v^2}{2} - \frac{GM}{r}\)</span></p>
+<p>-<span class="arithmatex">\(E &lt; 0\)</span>: Bound (elliptical or circular)<br/>
+- <span class="arithmatex">\(E = 0\)</span>: Parabolic escape<br/>
+- <span class="arithmatex">\(E &gt; 0\)</span>: Hyperbolic escape</p>
+<hr/>
+<h2 id="6-extensions-and-further-work"><strong>6. Extensions and Further Work</strong></h2>
+<ul>
+<li><strong>Vary direction</strong> of initial velocity to explore inclined orbits  </li>
+<li>Add <strong>atmospheric drag</strong> for low-altitude reentry modeling  </li>
+<li>Incorporate <strong>multi-body gravity</strong> (e.g., Moon’s effect)  </li>
+<li>Use <strong>Runge-Kutta 4th order</strong> for better accuracy  </li>
+<li>Allow <strong>interactive sliders</strong> for real-time simulation tuning  </li>
+</ul>
+<hr/>
+<h2 id="7-real-world-applications"><strong>7. Real-World Applications</strong></h2>
+<ul>
+<li><strong>Satellite Constellations</strong> (Starlink, GPS): Require precise orbital insertions.  </li>
+<li><strong>Earth Observation Missions</strong>: Often use elliptical Sun-synchronous orbits.  </li>
+<li><strong>Planetary Missions</strong>: Must achieve hyperbolic escape from Earth to begin transfer orbits.  </li>
+<li><strong>Reentry Planning</strong>: Capsules must target precise entry points to land safely.  </li>
+</ul>
+<hr/>
+<h2 id="8-conclusion"><strong>8. Conclusion</strong></h2>
+<p>The motion of a payload released near Earth is governed by gravitational physics and initial conditions. By simulating different launch velocities, we can observe distinct types of orbits and transitions. Such analysis is foundational for planning and executing space missions, ensuring payloads reach their intended destinations — be it orbit, Earth, or deep space.</p>
+<p>Understanding these trajectories equips us with the tools to navigate space with precision and safety.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
