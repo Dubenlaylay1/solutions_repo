@@ -172,6 +172,121 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="escape-velocities-and-cosmic-velocities-a-deep-dive-into-celestial-mechanics">Escape Velocities and Cosmic Velocities: A Deep Dive into Celestial Mechanics</h1>
+<h2 id="motivation">Motivation</h2>
+<p>As we venture further into the cosmos, understanding how to overcome gravitational forces becomes a fundamental challenge in space exploration. From placing satellites into orbit to launching interstellar probes, we rely on three critical velocity thresholds: the <strong>first</strong>, <strong>second</strong>, and <strong>third cosmic velocities</strong>. These velocities not only define the boundaries of orbital mechanics but also represent the minimum energy requirements for achieving space travel objectives.</p>
+<hr/>
+<h2 id="1-definitions-and-physical-meaning">1. Definitions and Physical Meaning</h2>
+<h3 id="first-cosmic-velocity-orbital-velocity">First Cosmic Velocity (Orbital Velocity)</h3>
+<p>The <strong>first cosmic velocity</strong> is the <strong>minimum horizontal speed</strong> an object must have to maintain a <strong>circular orbit</strong> just above a planet’s surface without falling back due to gravity.</p>
+<ul>
+<li>It ensures that the centrifugal force due to the orbital motion balances gravitational attraction.</li>
+<li>Formula:</li>
+</ul>
+<p><span class="arithmatex">\(v_1 = \sqrt\frac{GM}{R}\)</span></p>
+<p>Where:
+- <span class="arithmatex">\(G\)</span> = gravitational constant <span class="arithmatex">\(\approx 6.674 \times 10^{-11} \, \text{m}^3/\text{kg s}^2\)</span>
+- <span class="arithmatex">\(M\)</span> = mass of the celestial body
+- <span class="arithmatex">\(R\)</span> = radius from the center of mass</p>
+<hr/>
+<h3 id="second-cosmic-velocity-escape-velocity">Second Cosmic Velocity (Escape Velocity)</h3>
+<p>The <strong>second cosmic velocity</strong> is the <strong>minimum speed</strong> needed for an object to <strong>escape the gravitational pull</strong> of a celestial body without further propulsion.</p>
+<ul>
+<li>At this speed, kinetic energy equals the gravitational potential energy in magnitude.</li>
+</ul>
+<p><span class="arithmatex">\(v_2 = \sqrt{\frac{2GM}{R}} = \sqrt{2} \cdot v_1\)</span></p>
+<h3 id="third-cosmic-velocity-solar-system-escape">Third Cosmic Velocity (Solar System Escape)</h3>
+<p>The <strong>third cosmic velocity</strong> is the speed required to <strong>leave the gravitational influence of the Sun</strong> from Earth’s orbit. It’s the combination of Earth's escape velocity and the Sun’s gravitational potential at Earth's orbital distance.</p>
+<p><span class="arithmatex">\(v_3 = \sqrt{v_{escape,Sun}^2 + v_2^2}\)</span></p>
+<p>This velocity is essential for <strong>interstellar probes</strong> like <strong>Voyager 1</strong>, <strong>Voyager 2</strong>, and <strong>New Horizons</strong>.</p>
+<hr/>
+<h2 id="2-mathematical-derivation-of-cosmic-velocities">2. Mathematical Derivation of Cosmic Velocities</h2>
+<h3 id="potential-energy-and-kinetic-energy-basics">Potential Energy and Kinetic Energy Basics</h3>
+<ul>
+<li><strong>Gravitational Potential Energy</strong>:  </li>
+</ul>
+<p><span class="arithmatex">\(U = -\frac{GMm}{R}\)</span></p>
+<ul>
+<li><strong>Kinetic Energy</strong>:<br/>
+<span class="arithmatex">\(K = \frac{1}{2}mv^2\)</span></li>
+</ul>
+<h4 id="a-deriving-first-cosmic-velocity">a) Deriving First Cosmic Velocity:</h4>
+<p>Equating gravitational force to centripetal force:</p>
+<p><span class="arithmatex">\(\frac{GMm}{R^2} = \frac{mv^2}{R}
+\Rightarrow v_1 = \sqrt{\frac{GM}{R}}\)</span></p>
+<h4 id="b-deriving-second-cosmic-velocity">b) Deriving Second Cosmic Velocity:</h4>
+<p>Set kinetic energy equal to the absolute value of gravitational potential energy:</p>
+<p><span class="arithmatex">\(\frac{1}{2}mv^2 = \frac{GMm}{R}
+\Rightarrow v_2 = \sqrt{\frac{2GM}{R}}\)</span></p>
+<h4 id="c-deriving-third-cosmic-velocity">c) Deriving Third Cosmic Velocity:</h4>
+<p>We calculate escape velocity from the Sun’s gravity at the Earth’s orbital radius:</p>
+<p><span class="arithmatex">\(v_{escape,Sun} = \sqrt{\frac{2GM_{\odot}}{R_{\text{Earth-Sun}}}}
+\Rightarrow v_3 = \sqrt{v_{escape,Sun}^2 + v_2^2}\)</span></p>
+<h2 id="3-python-code-for-calculation-and-visualization">3. Python Code for Calculation and Visualization</h2>
+<p><a href="https://colab.research.google.com/drive/1h-VNzmIFj1AFSlN-l5du5RRxNWZ-4oRp#scrollTo=ixjryC4oMsKb">colab</a></p>
+<h2 id="4-applications-in-space-exploration">4. Applications in Space Exploration</h2>
+<h3 id="1-first-cosmic-velocity">1️ First Cosmic Velocity:</h3>
+<p>Used for <strong>orbital insertion</strong>. This is how:
+- Satellites are placed into Low Earth Orbit (LEO).
+- The International Space Station (ISS) stays in orbit.
+- Communications, Earth observation, and GPS satellites operate.</p>
+<h3 id="2-second-cosmic-velocity">2️ Second Cosmic Velocity:</h3>
+<p>Used for <strong>planetary missions</strong>:
+- Sending missions to Moon, Mars, and beyond.
+- Escaping the gravitational pull of planets.</p>
+<p><strong>Examples:</strong>
+- Apollo missions leaving Earth for the Moon.
+- Perseverance rover to Mars.</p>
+<h3 id="3-third-cosmic-velocity">3️ Third Cosmic Velocity:</h3>
+<p>Used for <strong>interstellar travel</strong>:
+- Probes like <strong>Voyager 1 &amp; 2</strong>, <strong>New Horizons</strong> leave the Solar System.
+- Requires gravity assists or high-efficiency propulsion systems.</p>
+<hr/>
+<h2 id="5-additional-factors-affecting-escape-velocity">5. Additional Factors Affecting Escape Velocity</h2>
+<ul>
+<li><strong>Atmospheric Drag</strong>: On planets with atmospheres, more energy is needed to overcome friction.</li>
+<li><strong>Rotation of the Planet</strong>: Launching near the equator helps, as the rotational speed adds to the spacecraft’s velocity.</li>
+<li><strong>Altitude</strong>: The higher the starting point, the lower the escape velocity required.</li>
+</ul>
+<hr/>
+<h2 id="6-comparison-table-of-velocities">6. Comparison Table of Velocities</h2>
+<table>
+<thead>
+<tr>
+<th>Planet</th>
+<th>First Cosmic Velocity (m/s)</th>
+<th>Second Cosmic Velocity (m/s)</th>
+<th>Third Cosmic Velocity (m/s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Earth</td>
+<td>~7,910</td>
+<td>~11,200</td>
+<td>~16,700</td>
+</tr>
+<tr>
+<td>Mars</td>
+<td>~3,560</td>
+<td>~5,030</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Jupiter</td>
+<td>~42,000</td>
+<td>~59,500</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="7-summary-and-conclusion">7. Summary and Conclusion</h2>
+<p>Cosmic velocities form the <strong>cornerstones of astrodynamics</strong>. From satellite deployment to interstellar escape, mastering these thresholds allows us to:
+- Optimize fuel and propulsion.
+- Design effective launch strategies.
+- Explore the universe safely and efficiently.</p>
+<p>As we aim for Mars colonization and exoplanet exploration, understanding and calculating these velocities remains as essential as ever.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
