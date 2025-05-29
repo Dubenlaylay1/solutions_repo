@@ -66,6 +66,30 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#theoretical-framework">Theoretical Framework</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-circular-wave-equation">A. Circular Wave Equation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#b-superposition-principle">B. Superposition Principle</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#experimental-design">Experimental Design</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#step-1-select-a-polygon">Step 1: Select a Polygon</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#step-2-place-the-sources">Step 2: Place the Sources</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3-compute-the-wave-field">Step 3: Compute the Wave Field</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#step-4-analyze-the-interference">Step 4: Analyze the Interference</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -172,6 +196,66 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<p>#  Interference Patterns on a Water Surface</p>
+<h2 id="introduction">Introduction</h2>
+<p>Wave phenomena are among the most fundamental and visually captivating aspects of physics. They appear in many forms, from ripples on a pond to sound waves in the air, electromagnetic waves in space, and even probability waves in quantum mechanics. One of the most fascinating and important behaviors of waves is <strong>interference</strong>—the phenomenon where two or more waves overlap and combine to form a new wave pattern.</p>
+<p>This report explores wave interference patterns on a water surface using a computational approach. By simulating point sources arranged at the vertices of a regular polygon, we analyze the resulting wave superposition to visualize and interpret the interference phenomena. The goal is to understand how symmetry, wave coherence, and spatial arrangement affect the resultant wave field.</p>
+<hr/>
+<h2 id="motivation">Motivation</h2>
+<p>Understanding interference not only helps in grasping fundamental wave behavior but also provides insight into real-world technologies and natural systems. Interference plays a key role in:</p>
+<ul>
+<li><strong>Optics</strong>: Diffraction gratings, anti-reflective coatings, holography.</li>
+<li><strong>Acoustics</strong>: Sound engineering, noise-cancellation technologies.</li>
+<li><strong>Quantum Physics</strong>: Double-slit experiments, quantum interference.</li>
+<li><strong>Water Engineering</strong>: Harbor design, wave energy devices.</li>
+</ul>
+<p>Observing wave interactions on a water surface gives an intuitive visualization of how multiple sources influence each other. The task provides an educational and computational framework for studying <strong>constructive interference</strong> (amplification) and <strong>destructive interference</strong> (cancellation).</p>
+<hr/>
+<h2 id="theoretical-framework">Theoretical Framework</h2>
+<h3 id="a-circular-wave-equation">A. Circular Wave Equation</h3>
+<p>The disturbance created by a single point source on a 2D water surface can be described by a circular wave function:</p>
+<p><span class="arithmatex">\(\eta(x, y, t) = \frac{A}{\sqrt{r}} \cos(kr - \omega t + \phi)\)</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(\eta(x, y, t)\)</span>: Water surface displacement at position <span class="arithmatex">\((x, y)\)</span> and time <span class="arithmatex">\(t\)</span></li>
+<li><span class="arithmatex">\(A\)</span>: Amplitude of the wave</li>
+<li><span class="arithmatex">\(r = \sqrt{(x - x_0)^2 + (y - y_0)^2}\)</span>: Radial distance from the source at <span class="arithmatex">\((x_0, y_0)\)</span></li>
+<li><span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span>: Wave number, related to the wavelength <span class="arithmatex">\(\lambda\)</span></li>
+<li><span class="arithmatex">\(\omega = 2\pi f\)</span>: Angular frequency, with <span class="arithmatex">\(f\)</span> being the frequency</li>
+<li><span class="arithmatex">\(\phi\)</span>: Phase shift (set to zero in our simulation for coherence)</li>
+</ul>
+<h3 id="b-superposition-principle">B. Superposition Principle</h3>
+<p>When multiple such waves overlap, their effects <strong>add linearly</strong> at each point due to the principle of superposition:</p>
+<p><span class="arithmatex">\(\eta_{\text{sum}}(x, y, t) = \sum_{i=1}^{N} \eta_i(x, y, t)\)</span></p>
+<p>Where <span class="arithmatex">\(N\)</span> is the number of sources. Each <span class="arithmatex">\(\eta_i\)</span> is calculated using the same wave function but from a different origin.</p>
+<hr/>
+<h2 id="experimental-design">Experimental Design</h2>
+<h3 id="step-1-select-a-polygon">Step 1: Select a Polygon</h3>
+<p>To study the effects of symmetry, a <strong>regular polygon</strong> is chosen. Examples include:</p>
+<ul>
+<li>Triangle (3 sides)</li>
+<li>Square (4 sides)</li>
+<li>Pentagon (5 sides)</li>
+<li>Hexagon (6 sides)</li>
+<li>Octagon (8 sides)</li>
+</ul>
+<p>For this analysis, we selected a <strong>regular pentagon</strong>, which introduces rich symmetry and complexity in interference patterns.</p>
+<h3 id="step-2-place-the-sources">Step 2: Place the Sources</h3>
+<p>Each wave source is placed at a vertex of the polygon. The coordinates of the vertices on the unit circle are calculated as:</p>
+<p><span class="arithmatex">\((x_i, y_i) = \left(R \cos\left(\frac{2\pi i}{N}\right), R \sin\left(\frac{2\pi i}{N}\right)\right), \quad i = 0, 1, ..., N-1\)</span></p>
+<p>Where <span class="arithmatex">\(R\)</span> is the radius of the circle (typically set to 1).</p>
+<h3 id="step-3-compute-the-wave-field">Step 3: Compute the Wave Field</h3>
+<p>A grid is defined in the <span class="arithmatex">\((x, y)\)</span> space. For each point, we compute its distance from each source and apply the wave function. The total displacement is obtained by summing up the contributions from all sources.</p>
+<h3 id="step-4-analyze-the-interference">Step 4: Analyze the Interference</h3>
+<p>Interference occurs where the wave crests and troughs of different sources overlap:</p>
+<ul>
+<li><strong>Constructive Interference</strong>: Waves in phase → larger amplitude</li>
+<li><strong>Destructive Interference</strong>: Waves out of phase → cancellation</li>
+</ul>
+<p>The resulting pattern is visualized using contour plots.</p>
+<hr/>
+<p><img alt="alt text" src="../image.png"/>
+<a href="https://colab.research.google.com/drive/1Rt-6yHZVJXXU7QQi_MIY_-0LrP8VFZ9B?usp=sharing">colab</a></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
