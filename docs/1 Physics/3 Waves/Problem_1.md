@@ -75,9 +75,62 @@ $(x_i, y_i) = \left(R \cos\left(\frac{2\pi i}{N}\right), R \sin\left(\frac{2\pi 
 
 Where $R$ is the radius of the circle (typically set to 1).
 
-### Step 3: Compute the Wave Field
+###  Step 3: Compute the Wave Field (Expanded)
 
-A grid is defined in the $(x, y)$ space. For each point, we compute its distance from each source and apply the wave function. The total displacement is obtained by summing up the contributions from all sources.
+Once the wave sources are positioned at the vertices of a regular polygon, the next step is to compute the resulting wave field across a defined 2D spatial domain. This involves discretizing the space into a grid and calculating the cumulative wave interference at each point due to all the sources.
+
+####  Grid Definition
+
+To analyze the spatial behavior of the waves, we create a rectangular grid in the $ (x, y) $ plane. This grid represents discrete sampling points over a continuous water surface and is typically centered at the origin. The resolution (number of grid points) and extent (how far in space it spreads) are chosen based on the wavelength and number of sources.
+
+Mathematically:
+
+- Let $ x \in [-L, L] $, and $ y \in [-L, L] $, where $ L $ is the half-width of the domain.
+- Create a mesh grid using:
+
+
+  $X, Y = \text{meshgrid}(x, y)$
+
+This gives us a matrix of spatial coordinates that serve as input to the wave function.
+
+####  Distance Calculation
+
+For each source $S_i$ located at coordinates $(x_i, y_i)$, we calculate the **radial distance** $r_i$ from every point $(x, y)$ on the grid to that source:
+
+
+$r_i(x, y) = \sqrt{(x - x_i)^2 + (y - y_i)^2}$
+
+This distance determines the phase and amplitude of the wave at that point due to source $S_i$.
+
+To avoid division by zero at the exact source location (where $ r_i = 0 $), we substitute a very small value (e.g., $10^{-6}$) in the denominator.
+
+#### Wave Contribution per Source
+
+The wave function from each source is modeled as a **circular wave** with damping (optional) due to radial spreading:
+
+
+$\eta_i(x, y, t) = \frac{A}{\sqrt{r_i}} \cos(k r_i - \omega t + \phi)$
+
+- $A$: Amplitude of the wave  
+- $k = \frac{2\pi}{\lambda}$: Wave number, with $\lambda$ as the wavelength  
+- $\omega = 2\pi f$: Angular frequency  
+- $\phi$: Phase offset (zero in coherent systems)  
+- $r_i$: Distance from source $i$
+
+Each wave propagates outward from its source and contributes an oscillatory disturbance at every point on the surface.
+
+#### Superposition of Waves
+
+Since water waves (in the linear approximation) follow the principle of **superposition**, the total wave displacement $\eta_{\text{total}}(x, y, t)$ at any point is the **sum** of displacements from all sources:
+
+$\eta_{\text{total}}(x, y, t) = \sum_{i=1}^{N} \eta_i(x, y, t)$
+
+This summation results in **interference patterns** where wave crests reinforce (constructive interference) or cancel out (destructive interference) each other.
+
+#### Implementation in Code
+
+In Python, this is done using NumPy arrays and a loop over all sources:
+
 
 ### Step 4: Analyze the Interference
 

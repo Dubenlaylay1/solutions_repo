@@ -131,7 +131,7 @@ Used for **interstellar travel**:
 | Mars     | ~3,560                       | ~5,030                        | —                            |
 | Jupiter  | ~42,000                      | ~59,500                       | —                            |
 
----
+![alt text](image-1.png)
 
 ##  7. Summary and Conclusion
 
