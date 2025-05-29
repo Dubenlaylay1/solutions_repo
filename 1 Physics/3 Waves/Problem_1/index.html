@@ -247,10 +247,10 @@
 <h3 id="step-3-compute-the-wave-field-expanded">Step 3: Compute the Wave Field (Expanded)</h3>
 <p>Once the wave sources are positioned at the vertices of a regular polygon, the next step is to compute the resulting wave field across a defined 2D spatial domain. This involves discretizing the space into a grid and calculating the cumulative wave interference at each point due to all the sources.</p>
 <h4 id="grid-definition">Grid Definition</h4>
-<p>To analyze the spatial behavior of the waves, we create a rectangular grid in the $ (x, y) $ plane. This grid represents discrete sampling points over a continuous water surface and is typically centered at the origin. The resolution (number of grid points) and extent (how far in space it spreads) are chosen based on the wavelength and number of sources.</p>
+<p>To analyze the spatial behavior of the waves, we create a rectangular grid in the <span class="arithmatex">\((x, y)\)</span> plane. This grid represents discrete sampling points over a continuous water surface and is typically centered at the origin. The resolution (number of grid points) and extent (how far in space it spreads) are chosen based on the wavelength and number of sources.</p>
 <p>Mathematically:</p>
 <ul>
-<li>Let $ x \in [-L, L] $, and $ y \in [-L, L] $, where $ L $ is the half-width of the domain.</li>
+<li>Let <span class="arithmatex">\(x \in [-L, L]\)</span>, and <span class="arithmatex">\(y \in [-L, L]\)</span>, where <span class="arithmatex">\(L\)</span> is the half-width of the domain.</li>
 <li>Create a mesh grid using:</li>
 </ul>
 <p><span class="arithmatex">\(X, Y = \text{meshgrid}(x, y)\)</span></p>
