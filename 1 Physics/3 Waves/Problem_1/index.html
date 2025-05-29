@@ -84,7 +84,7 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#step-2-place-the-sources">Step 2: Place the Sources</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#step-3-compute-the-wave-field">Step 3: Compute the Wave Field</a>
+<li class="toctree-l4"><a class="reference internal" href="#step-3-compute-the-wave-field-expanded">Step 3: Compute the Wave Field (Expanded)</a>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#step-4-analyze-the-interference">Step 4: Analyze the Interference</a>
 </li>
@@ -244,8 +244,39 @@
 <p>Each wave source is placed at a vertex of the polygon. The coordinates of the vertices on the unit circle are calculated as:</p>
 <p><span class="arithmatex">\((x_i, y_i) = \left(R \cos\left(\frac{2\pi i}{N}\right), R \sin\left(\frac{2\pi i}{N}\right)\right), \quad i = 0, 1, ..., N-1\)</span></p>
 <p>Where <span class="arithmatex">\(R\)</span> is the radius of the circle (typically set to 1).</p>
-<h3 id="step-3-compute-the-wave-field">Step 3: Compute the Wave Field</h3>
-<p>A grid is defined in the <span class="arithmatex">\((x, y)\)</span> space. For each point, we compute its distance from each source and apply the wave function. The total displacement is obtained by summing up the contributions from all sources.</p>
+<h3 id="step-3-compute-the-wave-field-expanded">Step 3: Compute the Wave Field (Expanded)</h3>
+<p>Once the wave sources are positioned at the vertices of a regular polygon, the next step is to compute the resulting wave field across a defined 2D spatial domain. This involves discretizing the space into a grid and calculating the cumulative wave interference at each point due to all the sources.</p>
+<h4 id="grid-definition">Grid Definition</h4>
+<p>To analyze the spatial behavior of the waves, we create a rectangular grid in the $ (x, y) $ plane. This grid represents discrete sampling points over a continuous water surface and is typically centered at the origin. The resolution (number of grid points) and extent (how far in space it spreads) are chosen based on the wavelength and number of sources.</p>
+<p>Mathematically:</p>
+<ul>
+<li>Let $ x \in [-L, L] $, and $ y \in [-L, L] $, where $ L $ is the half-width of the domain.</li>
+<li>Create a mesh grid using:</li>
+</ul>
+<p><span class="arithmatex">\(X, Y = \text{meshgrid}(x, y)\)</span></p>
+<p>This gives us a matrix of spatial coordinates that serve as input to the wave function.</p>
+<h4 id="distance-calculation">Distance Calculation</h4>
+<p>For each source <span class="arithmatex">\(S_i\)</span> located at coordinates <span class="arithmatex">\((x_i, y_i)\)</span>, we calculate the <strong>radial distance</strong> <span class="arithmatex">\(r_i\)</span> from every point <span class="arithmatex">\((x, y)\)</span> on the grid to that source:</p>
+<p><span class="arithmatex">\(r_i(x, y) = \sqrt{(x - x_i)^2 + (y - y_i)^2}\)</span></p>
+<p>This distance determines the phase and amplitude of the wave at that point due to source <span class="arithmatex">\(S_i\)</span>.</p>
+<p>To avoid division by zero at the exact source location (where $ r_i = 0 $), we substitute a very small value (e.g., <span class="arithmatex">\(10^{-6}\)</span>) in the denominator.</p>
+<h4 id="wave-contribution-per-source">Wave Contribution per Source</h4>
+<p>The wave function from each source is modeled as a <strong>circular wave</strong> with damping (optional) due to radial spreading:</p>
+<p><span class="arithmatex">\(\eta_i(x, y, t) = \frac{A}{\sqrt{r_i}} \cos(k r_i - \omega t + \phi)\)</span></p>
+<ul>
+<li><span class="arithmatex">\(A\)</span>: Amplitude of the wave  </li>
+<li><span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span>: Wave number, with <span class="arithmatex">\(\lambda\)</span> as the wavelength  </li>
+<li><span class="arithmatex">\(\omega = 2\pi f\)</span>: Angular frequency  </li>
+<li><span class="arithmatex">\(\phi\)</span>: Phase offset (zero in coherent systems)  </li>
+<li><span class="arithmatex">\(r_i\)</span>: Distance from source <span class="arithmatex">\(i\)</span></li>
+</ul>
+<p>Each wave propagates outward from its source and contributes an oscillatory disturbance at every point on the surface.</p>
+<h4 id="superposition-of-waves">Superposition of Waves</h4>
+<p>Since water waves (in the linear approximation) follow the principle of <strong>superposition</strong>, the total wave displacement <span class="arithmatex">\(\eta_{\text{total}}(x, y, t)\)</span> at any point is the <strong>sum</strong> of displacements from all sources:</p>
+<p><span class="arithmatex">\(\eta_{\text{total}}(x, y, t) = \sum_{i=1}^{N} \eta_i(x, y, t)\)</span></p>
+<p>This summation results in <strong>interference patterns</strong> where wave crests reinforce (constructive interference) or cancel out (destructive interference) each other.</p>
+<h4 id="implementation-in-code">Implementation in Code</h4>
+<p>In Python, this is done using NumPy arrays and a loop over all sources:</p>
 <h3 id="step-4-analyze-the-interference">Step 4: Analyze the Interference</h3>
 <p>Interference occurs where the wave crests and troughs of different sources overlap:</p>
 <ul>
