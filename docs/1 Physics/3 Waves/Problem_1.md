@@ -81,11 +81,11 @@ Once the wave sources are positioned at the vertices of a regular polygon, the n
 
 ####  Grid Definition
 
-To analyze the spatial behavior of the waves, we create a rectangular grid in the $ (x, y) $ plane. This grid represents discrete sampling points over a continuous water surface and is typically centered at the origin. The resolution (number of grid points) and extent (how far in space it spreads) are chosen based on the wavelength and number of sources.
+To analyze the spatial behavior of the waves, we create a rectangular grid in the $(x, y)$ plane. This grid represents discrete sampling points over a continuous water surface and is typically centered at the origin. The resolution (number of grid points) and extent (how far in space it spreads) are chosen based on the wavelength and number of sources.
 
 Mathematically:
 
-- Let $ x \in [-L, L] $, and $ y \in [-L, L] $, where $ L $ is the half-width of the domain.
+- Let $x \in [-L, L]$, and $y \in [-L, L]$, where $L$ is the half-width of the domain.
 - Create a mesh grid using:
 
 
