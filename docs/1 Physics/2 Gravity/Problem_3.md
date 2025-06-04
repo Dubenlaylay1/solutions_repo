@@ -54,8 +54,8 @@ $E = \frac{v^2}{2} - \frac{GM}{r}$
 ## **3. Numerical Method and Simulation**
 [colab](https://colab.research.google.com/drive/1raWB9TNWxT8IPwkEpjn4Eet5dzij_V4j#scrollTo=ODDZ1N6_kte4)
 
-
----
+![](image-2.png)
+![alt text](image-3.png)
 
 ## **4. Results and Interpretation**
 
