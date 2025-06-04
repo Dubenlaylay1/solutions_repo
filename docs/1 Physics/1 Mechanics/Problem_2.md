@@ -95,6 +95,8 @@ The forced damped pendulum is a rich system that illustrates the complexity emer
 
 This study not only deepens our understanding of fundamental physics but also equips us with tools to address real-world challenges across engineering and science disciplines.
 
+
+[colab simulation](https://colab.research.google.com/drive/1H4RI7o1dWtaqi0m2dv8FE1p8UMqy_ItR?usp=sharing)
 ---
 
 
