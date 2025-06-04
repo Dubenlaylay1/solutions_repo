@@ -97,6 +97,6 @@ This study not only deepens our understanding of fundamental physics but also eq
 
 
 [colab simulation](https://colab.research.google.com/drive/1H4RI7o1dWtaqi0m2dv8FE1p8UMqy_ItR?usp=sharing)
----
+
 
 
