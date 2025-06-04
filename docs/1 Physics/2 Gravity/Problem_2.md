@@ -133,6 +133,7 @@ Used for **interstellar travel**:
 
 ![alt text](image-1.png)
 
+[colab](https://colab.research.google.com/drive/1oTv5HYToeFb7e1a1Qr3qEIBm-Y7X0ncE?usp=sharing)
 ##  7. Summary and Conclusion
 
 Cosmic velocities form the **cornerstones of astrodynamics**. From satellite deployment to interstellar escape, mastering these thresholds allows us to:
