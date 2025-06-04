@@ -129,3 +129,5 @@ $E = \frac{v^2}{2} - \frac{GM}{r}$
 The motion of a payload released near Earth is governed by gravitational physics and initial conditions. By simulating different launch velocities, we can observe distinct types of orbits and transitions. Such analysis is foundational for planning and executing space missions, ensuring payloads reach their intended destinations — be it orbit, Earth, or deep space.
 
 Understanding these trajectories equips us with the tools to navigate space with precision and safety.
+
+[Colab](https://colab.research.google.com/drive/1T-Zb9hcd3ay7faKjvrN90BD2DGyL_O5t?usp=sharing)
