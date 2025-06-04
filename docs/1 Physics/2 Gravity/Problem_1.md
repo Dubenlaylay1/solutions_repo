@@ -99,3 +99,5 @@ Where:
 - $T$ = orbital period
 - $a$ = semi-major axis of the orbit
 - $M_1$, $M_2$ = masses of the two orbiting bodies
+
+[colab simulation](https://colab.research.google.com/drive/1vo4C5DwcheBjntDqCZtJNdgq0V3UbYUy?usp=sharing)
