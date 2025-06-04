@@ -172,6 +172,154 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
+<h1 id="circuits">Circuits</h1>
+<h2 id="problem-1_1">Problem 1</h2>
+<h3 id="equivalent-resistance-using-graph-theory">Equivalent Resistance Using Graph Theory</h3>
+<hr/>
+<h3 id="motivation">Motivation</h3>
+<p>Calculating equivalent resistance is a fundamental problem in electrical circuits, essential for understanding and designing efficient systems. While traditional methods involve iteratively applying series and parallel resistor rules, these approaches can become cumbersome for complex circuits with many components. Graph theory offers a powerful alternative, providing a structured and algorithmic way to analyze circuits.</p>
+<p>By representing a circuit as a graph—where nodes correspond to junctions and edges represent resistors with weights equal to their resistance values—we can systematically simplify even the most intricate networks. This method not only streamlines calculations but also opens the door to automated analysis, making it particularly useful in modern applications like circuit simulation software, optimization problems, and network design.</p>
+<p>Studying equivalent resistance through graph theory is valuable not only for its practical applications but also for the deeper insights it provides into the interplay between electrical and mathematical concepts. This approach highlights the versatility of graph theory, demonstrating its relevance across physics, engineering, and computer science.</p>
+<hr/>
+<h2 id="task-options">Task Options</h2>
+<h3 id="option-1-simplified-task-algorithm-description">Option 1: Simplified Task – Algorithm Description</h3>
+<p>Describe the algorithm for calculating the equivalent resistance using graph theory.</p>
+<p>Provide the pseudocode that:</p>
+<ul>
+<li>Identifies series and parallel connections.</li>
+<li>Iteratively reduces the graph until a single equivalent resistance is obtained.</li>
+<li>Include a clear explanation of how the algorithm handles nested combinations.</li>
+</ul>
+<hr/>
+<h3 id="option-2-advanced-task-full-implementation">Option 2: Advanced Task – Full Implementation</h3>
+<p>Implement the algorithm in a programming language of your choice.</p>
+<p>Ensure the implementation:</p>
+<ul>
+<li>Accepts a circuit graph as input.</li>
+<li>Handles arbitrary resistor configurations, including nested series and parallel connections.</li>
+<li>Outputs the final equivalent resistance.</li>
+</ul>
+<p>Test your implementation with examples, such as:</p>
+<ul>
+<li>Simple series and parallel combinations.</li>
+<li>Nested configurations.</li>
+<li>Complex graphs with multiple cycles.</li>
+</ul>
+<hr/>
+<h2 id="deliverables">Deliverables</h2>
+<p>Your submission should comprehensively address the problem statement and demonstrate a clear understanding of equivalent resistance calculation using graph theory. The deliverables include the following components:</p>
+<h3 id="1-detailed-algorithm-description-or-full-implementation">1. Detailed Algorithm Description or Full Implementation</h3>
+<ul>
+<li><strong>Algorithm Description (for Option 1):</strong><br/>
+  Provide a thorough explanation of the algorithm that calculates the equivalent resistance using graph theory. This should include:</li>
+<li>Clear definitions of how series and parallel resistor configurations are identified within the graph representation.</li>
+<li>The step-by-step process of iterative graph simplification, detailing how nodes and edges are merged or removed.</li>
+<li>Handling of nested and complex circuit configurations.</li>
+<li>Pseudocode that outlines the main steps of the algorithm in a readable and logically ordered format.</li>
+<li>
+<p>Discussion of potential edge cases and how the algorithm resolves or avoids infinite loops or dead ends during simplification.</p>
+</li>
+<li>
+<p><strong>Full Implementation (for Option 2):</strong><br/>
+  Provide a working program written in a programming language of your choice that:</p>
+</li>
+<li>Accepts a circuit graph as input, with nodes representing junctions and edges weighted by resistor values.</li>
+<li>Implements the iterative reduction algorithm to compute the equivalent resistance between specified source and sink nodes.</li>
+<li>Handles arbitrary resistor configurations, including series, parallel, nested, and cyclic structures.</li>
+<li>Outputs the final equivalent resistance as a single numerical value.</li>
+<li>Includes comments and documentation within the code for readability and maintainability.</li>
+<li>Includes error handling for invalid or unsupported circuit configurations.</li>
+</ul>
+<h3 id="2-examples-and-test-cases">2. Examples and Test Cases</h3>
+<ul>
+<li>Provide at least <strong>three distinct example circuits</strong> demonstrating the algorithm’s capabilities. For each example:</li>
+<li>Present the circuit diagram or graph structure clearly, indicating nodes, edges, and resistor values.</li>
+<li>Describe the expected theoretical equivalent resistance.</li>
+<li>Show step-by-step simplification or computation results produced by your algorithm or implementation.</li>
+<li>Highlight how nested series and parallel combinations are identified and reduced.</li>
+<li>For more complex cases, explain how cycles or non-trivial topologies are handled.</li>
+<li>Include input representations (e.g., adjacency lists or matrices) and output results for reproducibility.</li>
+</ul>
+<h3 id="3-analytical-discussion">3. Analytical Discussion</h3>
+<ul>
+<li>
+<p><strong>Correctness:</strong><br/>
+  Argue or demonstrate why the algorithm correctly computes equivalent resistance for the tested examples and by extension for general resistor networks that are reducible by series-parallel combinations.</p>
+</li>
+<li>
+<p><strong>Algorithm Complexity:</strong><br/>
+  Provide a detailed analysis of the time and space complexity of your approach. Discuss:</p>
+</li>
+<li>How the complexity depends on the number of nodes and edges.</li>
+<li>The impact of iterative reductions on overall runtime.</li>
+<li>Worst-case scenarios, such as highly interconnected graphs or large-scale circuits.</li>
+<li>
+<p>How your implementation handles or could be improved to handle these cases efficiently.</p>
+</li>
+<li>
+<p><strong>Potential Improvements:</strong><br/>
+  Suggest and discuss possible optimizations or alternative approaches, such as:</p>
+</li>
+<li>Use of more advanced graph transformations (e.g., Y-Δ transforms) for non-series-parallel circuits.</li>
+<li>Data structures that improve performance, like hash maps for edge grouping.</li>
+<li>Incremental update strategies to avoid redundant computations.</li>
+<li>
+<p>Parallelization or integration with numerical methods for very large or complex networks.</p>
+</li>
+<li>
+<p><strong>Limitations and Assumptions:</strong><br/>
+  Clearly state any assumptions made in the algorithm or implementation, such as:</p>
+</li>
+<li>The circuit is purely resistive with linear, passive components.</li>
+<li>The graph is connected between the source and sink nodes.</li>
+<li>Limitations regarding certain circuit topologies that the current method cannot simplify.</li>
+</ul>
+<h3 id="4-documentation-and-presentation">4. Documentation and Presentation</h3>
+<ul>
+<li>Submit your work in a well-organized format that includes:</li>
+<li>Clear section headings corresponding to each deliverable component.</li>
+<li>Explanations written in accessible language, appropriate for audiences familiar with basic graph theory and circuit analysis.</li>
+<li>Diagrams, tables, or figures to illustrate concepts, examples, or algorithm steps where helpful.</li>
+<li>Source code files or notebooks with proper naming conventions.</li>
+<li>A README file or introductory notes explaining how to run the implementation and interpret the results, if applicable.</li>
+</ul>
+<hr/>
+<h1 id="equivalent-resistance-using-graph-theory-detailed-algorithm-description">Equivalent Resistance Using Graph Theory — Detailed Algorithm Description</h1>
+<hr/>
+<h3 id="introduction-and-motivation">Introduction and Motivation</h3>
+<p>Calculating the equivalent resistance of a circuit is a foundational problem in electrical engineering, as it helps us understand how current flows through complex networks of resistors. Traditional approaches use straightforward series and parallel formulas, but as circuits grow more complex — with combinations of series and parallel resistors arranged in nested structures, loops, and bridges — manual calculation becomes unwieldy or even impossible without systematic methods.</p>
+<p>Graph theory offers a natural and powerful framework to tackle this. By modeling a circuit as a graph:</p>
+<ul>
+<li><strong>Nodes (Vertices):</strong> Represent electrical junctions or connection points.</li>
+<li><strong>Edges:</strong> Represent resistors, with weights corresponding to their resistance values.</li>
+</ul>
+<p>This abstraction lets us leverage graph algorithms to identify patterns — such as series and parallel structures — and simplify the circuit iteratively, making complex networks tractable and enabling algorithmic and automated analysis.</p>
+<hr/>
+<h3 id="fundamental-concepts-in-circuit-graph-mapping">Fundamental Concepts in Circuit-Graph Mapping</h3>
+<ul>
+<li>
+<p><strong>Series Connection in Graph Terms:</strong><br/>
+  A node with exactly two incident edges (degree 2), except for the circuit’s start and end nodes, can be "removed" by merging those two edges into one with summed resistance. This corresponds to the physical concept of resistors connected end-to-end.</p>
+</li>
+<li>
+<p><strong>Parallel Connection in Graph Terms:</strong><br/>
+  Multiple edges connecting the same pair of nodes represent resistors in parallel. These edges can be replaced by a single equivalent edge whose resistance is given by the reciprocal of the sum of reciprocals formula.</p>
+</li>
+<li>
+<p><strong>Complex Structures (Nested Series-Parallel and Cycles):</strong><br/>
+  Complex circuits often contain nested combinations of series and parallel parts, sometimes forming loops or bridges. The iterative reduction approach handles this by repeatedly simplifying series and parallel elements, which may open new simplification opportunities as the graph changes.</p>
+</li>
+</ul>
+<hr/>
+<h3 id="algorithm-overview">Algorithm Overview</h3>
+<p>The algorithm works by <strong>iterative graph reduction</strong>:</p>
+<ol>
+<li><strong>Identify series components</strong> (nodes with degree 2 excluding terminals) and reduce them by merging their edges.</li>
+<li><strong>Identify parallel components</strong> (multiple edges between two nodes) and reduce them by calculating equivalent resistance.</li>
+<li>Repeat these steps until the graph is simplified to a single edge between the source and sink nodes.</li>
+</ol>
+<p>This process is guaranteed to converge for circuits composed purely of resistors, as each step strictly reduces the number of edges or nodes in the graph.</p>
+<hr/>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
