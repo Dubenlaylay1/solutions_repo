@@ -145,3 +145,6 @@ The resulting pattern is visualized using contour plots.
 
 ![alt text](image.png)
 [colab](https://colab.research.google.com/drive/1FFAsAzk1EMgbQz2z1f9FveToSdfCBSzS?usp=sharing)
+
+
+![alt text](image-1.png)
