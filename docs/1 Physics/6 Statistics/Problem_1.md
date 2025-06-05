@@ -49,6 +49,9 @@ The Central Limit Theorem is critical in various real-world applications:
 
 [Colab](https://colab.research.google.com/drive/12Z-9wAoqlMDmrrKYHYNShal0FZZwQvDG?usp=sharing)
 
+![alt text](image.png)
+![alt text](image-1.png)
+
 ---
 
 ## Results
