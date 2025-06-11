@@ -21,18 +21,25 @@ This force governs the motion of charged particles in a vast array of physical s
 ### 2.1 Particle Accelerators
 
 In particle accelerators, charged particles such as electrons, protons, or ions are propelled to high speeds using electric fields and steered or confined using magnetic fields. The Lorentz force is used to precisely control the trajectory of particles, ensuring they follow desired paths within accelerator components like cyclotrons, synchrotrons, or linear accelerators. Magnetic fields bend particle beams, while oscillating electric fields accelerate them.
+![alt text](image-10.png)
 
 ### 2.2 Mass Spectrometers
 
 Mass spectrometers exploit the Lorentz force to differentiate ions based on their mass-to-charge ratio. When ions enter a magnetic field region, their trajectories curve according to their charge and velocity. Measuring this curvature allows determination of molecular weights and identification of substances. This technology is widely used in chemistry, biology, and environmental science.
 
+![alt text](image-11.png)
+
 ### 2.3 Plasma Confinement
 
 Magnetic confinement fusion devices, such as tokamaks and stellarators, rely on strong magnetic fields to confine hot, charged plasma particles. The Lorentz force causes particles to gyrate around magnetic field lines, creating confinement. Understanding particle orbits and drifts in complex magnetic geometries is crucial to minimizing plasma losses and maintaining stable fusion conditions.
 
+![alt text](image-12.png)
+
 ### 2.4 Astrophysical Contexts
 
 In space and astrophysics, charged particles like cosmic rays and solar wind ions interact with planetary and interstellar magnetic fields. Their motion influenced by the Lorentz force results in phenomena such as auroras, radiation belts, and magnetic reconnection events. Modeling these effects aids in understanding space weather and protecting satellites.
+
+![alt text](image-13.png)
 
 ---
 
@@ -113,13 +120,17 @@ This drift is independent of the charge and mass of the particle and results in 
 
 Increasing magnetic field strength $B$ reduces the Larmor radius and increases cyclotron frequency, resulting in tighter and faster gyration. Increasing electric field strength $E$ accelerates particles more strongly and influences the drift speed.
 
+![alt text](image-7.png)
+
 ### 6.2 Varying Initial Velocity
 
 Particles with higher initial perpendicular velocity have larger gyroradii, whereas particles with significant parallel velocity components move faster along the magnetic field lines.
+![alt text](image-8.png)
 
 ### 6.3 Varying Charge and Mass
 
 Electrons, with small mass and negative charge, have very small radii and high frequencies compared to heavier ions with positive charges. Charge sign determines the direction of gyration.
+![alt text](image-9.png)
 
 ---
 
@@ -129,9 +140,12 @@ To understand the motion, trajectories can be plotted:
 
 - **2D plots:** Useful for visualizing circular or drift paths in a plane.
 - **3D plots:** Show full spatial paths, especially for helical motion.
+![alt text](image.png)
 
 Important phenomena like Larmor radius and drift velocity can be visually identified.
+![alt text](image-1.png)
 
+![alt text](image-2.png)
 ---
 
 ## 8. Practical Relevance and Relation to Real Systems
@@ -139,15 +153,20 @@ Important phenomena like Larmor radius and drift velocity can be visually identi
 ### 8.1 Cyclotrons
 
 Cyclotrons use perpendicular magnetic fields to bend particles in circular orbits, combined with electric fields to accelerate them. The balance between cyclotron frequency and acceleration timing is crucial, a fact clearly reflected in simulation results of circular motion.
+![alt text](image-3.png)
+
 
 ### 8.2 Magnetic Confinement Fusion Devices
 
 In devices like tokamaks, strong toroidal and poloidal magnetic fields trap plasma particles. Simulations help understand how charged particles move, escape, or drift, providing insights into plasma stability.
 
+![alt text](image-4.png)
+
 ### 8.3 Mass Spectrometry
 
 Simulation of particle trajectories under magnetic fields replicates how ions of different mass-to-charge ratios separate spatially. This principle underlies mass spectrometer design.
 
+![alt text](image-5.png)
 ---
 
 ## 9. Suggestions for Extending the Simulation
@@ -155,6 +174,7 @@ Simulation of particle trajectories under magnetic fields replicates how ions of
 ### 9.1 Non-uniform Fields
 
 Including magnetic field gradients, such as magnetic mirrors or dipole fields, introduces additional forces and changes particle confinement characteristics.
+![alt text](image-6.png)
 
 ### 9.2 Relativistic Particles
 
