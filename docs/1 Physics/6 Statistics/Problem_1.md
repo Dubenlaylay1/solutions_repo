@@ -91,5 +91,5 @@ The simulation will generate histograms of sample means from different distribut
 This study demonstrates the Central Limit Theorem in practice. Regardless of the original population distribution, the distribution of sample means becomes approximately normal as the sample size grows. This property forms the basis for many inferential techniques in statistics.
 
 ---
-
+![alt text](image-2.png)
 

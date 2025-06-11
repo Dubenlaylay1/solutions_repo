@@ -148,3 +148,6 @@ The resulting pattern is visualized using contour plots.
 
 
 ![alt text](image-1.png)
+
+
+![alt text](<download (2).gif>)
