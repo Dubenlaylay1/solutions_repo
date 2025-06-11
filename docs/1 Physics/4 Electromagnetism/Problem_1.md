@@ -49,9 +49,13 @@ In space and astrophysics, charged particles like cosmic rays and solar wind ion
 
 The electric field applies a force in the direction of the field on charged particles. This accelerates or decelerates the particles, increasing or decreasing their kinetic energy. In a uniform electric field, a charged particle experiences linear acceleration.
 
+![alt text](image-14.png)
+
 ### 3.2 Magnetic Field Effects
 
 A magnetic field exerts a force perpendicular to both the particle’s velocity and the magnetic field vector. This force does no work on the particle (it does not change kinetic energy) but alters the direction of motion, causing circular or helical trajectories depending on the initial velocity components relative to the field.
+
+![alt text](image-15.png)
 
 ### 3.3 Combined Electric and Magnetic Fields
 
