@@ -20,26 +20,24 @@ Each method uses randomness in a different way, and their comparison provides in
 
 ### 1. Theoretical Foundation
 
-Consider a unit circle (radius = 1) inscribed in a square with side length 2 (from -1 to 1 in both x and y directions). The area of the circle is \( A_{\text{circle}} = \pi r^2 = \pi \), and the area of the square is \( A_{\text{square}} = 4 \).
+Consider a unit circle (radius = 1) inscribed in a square with side length 2 (from -1 to 1 in both x and y directions). The area of the circle is $A_{\text{circle}} = \pi r^2 = \pi$, and the area of the square is $A_{\text{square}} = 4$.
 
 If we randomly generate points within the square, the proportion of points that fall inside the circle should approximate the ratio of the areas:
 
-\[
-\frac{\text{Points inside the circle}}{\text{Total points}} \approx \frac{\pi}{4}
-\]
+
+$\frac{\text{Points inside the circle}}{\text{Total points}} \approx \frac{\pi}{4}$
 
 Therefore, multiplying both sides by 4 gives us an estimate for π:
 
-\[
-π ≈ 4 \cdot \frac{\text{Points inside the circle}}{\text{Total points}}
-\]
+
+$π ≈ 4 \cdot \frac{\text{Points inside the circle}}{\text{Total points}}$
 
 This approach leverages the **Law of Large Numbers**, which states that the average of results from a large number of trials should be close to the expected value.
 
 ### 2. Simulation Procedure
 
-- Generate \( n \) random (x, y) points uniformly distributed within the square \([-1, 1] \times [-1, 1]\).
-- For each point, check whether it lies inside the unit circle using the condition \( x^2 + y^2 \leq 1 \).
+- Generate $n$ random (x, y) points uniformly distributed within the square $[-1, 1] \times [-1, 1]$.
+- For each point, check whether it lies inside the unit circle using the condition $x^2 + y^2 \leq 1$.
 - Count the number of points that fall inside the circle.
 - Estimate π using the formula above.
 
@@ -74,28 +72,26 @@ Buffon's Needle is a classical problem in geometric probability, proposed in the
 
 The probability \( P \) that the needle crosses a line is given by:
 
-\[
-P = \frac{2L}{πD}
-\]
+
+$P = \frac{2L}{πD}$
 
 Rearranging this gives a formula to estimate π:
 
-\[
-π ≈ \frac{2L \cdot n}{D \cdot c}
-\]
+
+$π ≈ \frac{2L \cdot n}{D \cdot c}$
 
 Where:
-- \( n \) is the number of needle drops,
-- \( c \) is the number of times the needle crosses a line.
+- $n$ is the number of needle drops,
+- $c$ is the number of times the needle crosses a line.
 
-Assuming \( L \leq D \) simplifies the problem and ensures correctness of the formula.
+Assuming $L \leq D$ simplifies the problem and ensures correctness of the formula.
 
 ### 2. Simulation Procedure
 
-- Set values for \( L \) and \( D \) such that \( L \leq D \) (e.g., \( L = 1 \), \( D = 2 \)).
+- Set values for $L$ and $D$ such that $L \leq D e.g., $\L = 1 $, $D = 2 $.
 - For each needle drop:
   - Randomly generate a center point of the needle along the y-axis.
-  - Randomly generate an angle \( θ \) between 0 and π.
+  - Randomly generate an angle $θ$ between 0 and π.
   - Determine the positions of the needle’s two ends.
   - Check whether the needle crosses a line.
 - Count total drops and total crossings.
