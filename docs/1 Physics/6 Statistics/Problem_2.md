@@ -141,9 +141,4 @@ Both Monte Carlo methods effectively demonstrate how randomness can be used to e
 
 ---
 
-## References
-
-- Monte Carlo Methods in Practice, Springer (1998)
-- Buffon, G.-L. (1777). Essai d'Arithmétique Morale.
-- Higham, D. (2008). *Modeling and Simulating Random Processes.* SIAM.
 
