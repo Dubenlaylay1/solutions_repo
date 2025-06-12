@@ -185,20 +185,16 @@
 <hr/>
 <h2 id="part-1-estimating-using-a-circle">Part 1: Estimating π Using a Circle</h2>
 <h3 id="1-theoretical-foundation">1. Theoretical Foundation</h3>
-<p>Consider a unit circle (radius = 1) inscribed in a square with side length 2 (from -1 to 1 in both x and y directions). The area of the circle is <span class="arithmatex">\( A_{\text{circle}} = \pi r^2 = \pi \)</span>, and the area of the square is <span class="arithmatex">\( A_{\text{square}} = 4 \)</span>.</p>
+<p>Consider a unit circle (radius = 1) inscribed in a square with side length 2 (from -1 to 1 in both x and y directions). The area of the circle is <span class="arithmatex">\(A_{\text{circle}} = \pi r^2 = \pi\)</span>, and the area of the square is <span class="arithmatex">\(A_{\text{square}} = 4\)</span>.</p>
 <p>If we randomly generate points within the square, the proportion of points that fall inside the circle should approximate the ratio of the areas:</p>
-<div class="arithmatex">\[
-\frac{\text{Points inside the circle}}{\text{Total points}} \approx \frac{\pi}{4}
-\]</div>
+<p><span class="arithmatex">\(\frac{\text{Points inside the circle}}{\text{Total points}} \approx \frac{\pi}{4}\)</span></p>
 <p>Therefore, multiplying both sides by 4 gives us an estimate for π:</p>
-<div class="arithmatex">\[
-π ≈ 4 \cdot \frac{\text{Points inside the circle}}{\text{Total points}}
-\]</div>
+<p><span class="arithmatex">\(π ≈ 4 \cdot \frac{\text{Points inside the circle}}{\text{Total points}}\)</span></p>
 <p>This approach leverages the <strong>Law of Large Numbers</strong>, which states that the average of results from a large number of trials should be close to the expected value.</p>
 <h3 id="2-simulation-procedure">2. Simulation Procedure</h3>
 <ul>
-<li>Generate <span class="arithmatex">\( n \)</span> random (x, y) points uniformly distributed within the square <span class="arithmatex">\([-1, 1] \times [-1, 1]\)</span>.</li>
-<li>For each point, check whether it lies inside the unit circle using the condition <span class="arithmatex">\( x^2 + y^2 \leq 1 \)</span>.</li>
+<li>Generate <span class="arithmatex">\(n\)</span> random (x, y) points uniformly distributed within the square <span class="arithmatex">\([-1, 1] \times [-1, 1]\)</span>.</li>
+<li>For each point, check whether it lies inside the unit circle using the condition <span class="arithmatex">\(x^2 + y^2 \leq 1\)</span>.</li>
 <li>Count the number of points that fall inside the circle.</li>
 <li>Estimate π using the formula above.</li>
 </ul>
@@ -226,23 +222,19 @@
 <h3 id="1-theoretical-foundation_1">1. Theoretical Foundation</h3>
 <p>Buffon's Needle is a classical problem in geometric probability, proposed in the 18th century. It involves dropping a needle of length <span class="arithmatex">\( L \)</span> onto a plane ruled with parallel lines spaced a distance <span class="arithmatex">\( D \)</span> apart.</p>
 <p>The probability <span class="arithmatex">\( P \)</span> that the needle crosses a line is given by:</p>
-<div class="arithmatex">\[
-P = \frac{2L}{πD}
-\]</div>
+<p><span class="arithmatex">\(P = \frac{2L}{πD}\)</span></p>
 <p>Rearranging this gives a formula to estimate π:</p>
-<div class="arithmatex">\[
-π ≈ \frac{2L \cdot n}{D \cdot c}
-\]</div>
+<p><span class="arithmatex">\(π ≈ \frac{2L \cdot n}{D \cdot c}\)</span></p>
 <p>Where:
-- <span class="arithmatex">\( n \)</span> is the number of needle drops,
-- <span class="arithmatex">\( c \)</span> is the number of times the needle crosses a line.</p>
-<p>Assuming <span class="arithmatex">\( L \leq D \)</span> simplifies the problem and ensures correctness of the formula.</p>
+- <span class="arithmatex">\(n\)</span> is the number of needle drops,
+- <span class="arithmatex">\(c\)</span> is the number of times the needle crosses a line.</p>
+<p>Assuming <span class="arithmatex">\(L \leq D\)</span> simplifies the problem and ensures correctness of the formula.</p>
 <h3 id="2-simulation-procedure_1">2. Simulation Procedure</h3>
 <ul>
-<li>Set values for <span class="arithmatex">\( L \)</span> and <span class="arithmatex">\( D \)</span> such that <span class="arithmatex">\( L \leq D \)</span> (e.g., <span class="arithmatex">\( L = 1 \)</span>, <span class="arithmatex">\( D = 2 \)</span>).</li>
+<li>Set values for <span class="arithmatex">\(L\)</span> and <span class="arithmatex">\(D\)</span> such that $L \leq D e.g., $\L = 1 $, $D = 2 $.</li>
 <li>For each needle drop:</li>
 <li>Randomly generate a center point of the needle along the y-axis.</li>
-<li>Randomly generate an angle <span class="arithmatex">\( θ \)</span> between 0 and π.</li>
+<li>Randomly generate an angle <span class="arithmatex">\(θ\)</span> between 0 and π.</li>
 <li>Determine the positions of the needle’s two ends.</li>
 <li>Check whether the needle crosses a line.</li>
 <li>Count total drops and total crossings.</li>
