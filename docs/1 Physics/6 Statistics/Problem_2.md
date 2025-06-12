@@ -97,7 +97,7 @@ Assuming $L \leq D$ simplifies the problem and ensures correctness of the formul
 - Count total drops and total crossings.
 - Estimate π using the derived formula.
 
-![alt text](image-10.png)
+![alt text](image-11.png)
 
 ### 3. Visualization
 
