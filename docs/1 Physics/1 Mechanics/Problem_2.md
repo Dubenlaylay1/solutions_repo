@@ -1,102 +1,166 @@
-# Problem 2
-# Investigating the Dynamics of a Forced Damped Pendulum
+# Problem 2: Investigating the Dynamics of a Forced Damped Pendulum
+# Problem 2: Investigating the Dynamics of a Forced Damped Pendulum
 
 ## Motivation
 
-The forced damped pendulum serves as a paradigmatic example in the study of nonlinear dynamics. Its rich behavior arises from the interplay of three key factors: restoring forces (gravity), damping (friction or air resistance), and an external periodic driving force. Unlike the simple pendulum, which exhibits predictable periodic motion, the forced damped pendulum can transition into complex behaviors, including resonance, bifurcations, and chaos. These phenomena offer crucial insights into real-world systems such as mechanical oscillators, electrical circuits, climate models, and biological rhythms.
+The forced damped pendulum serves as a paradigmatic example in the study of nonlinear dynamics. Its rich behavior arises from the interplay of three key factors: restoring forces (gravity), damping (friction or air resistance), and an external periodic driving force.
 
-By introducing both damping and external periodic forcing, we open the door to a wide spectrum of behaviors depending on the system's parameters. When the damping is low and the driving force frequency is near the system's natural frequency, resonance occurs, potentially leading to large oscillations. As the driving force increases or damping changes, the system may shift into quasiperiodic or even chaotic motion. Understanding these transitions is not only fundamental to physics but also essential for engineering systems subject to vibrations and periodic stresses.
+Unlike the simple pendulum, which exhibits predictable periodic motion, the forced damped pendulum can transition into complex behaviors, including resonance, bifurcations, and chaos. These phenomena offer crucial insights into real-world systems such as mechanical oscillators, electrical circuits, climate models, and biological rhythms.
 
 ## 1. Theoretical Foundation
 
 ### Governing Equation
 
-The motion of a forced damped pendulum is governed by the nonlinear second-order differential equation:
+The motion is governed by the nonlinear differential equation:
 
-
-$\frac{d^{2}\theta}{dt^{2}} + b\frac{d\theta}{dt} + \frac{g}{L}\sin\theta = A\cos(\omega t)$
+$$\frac{d^{2}\theta}{dt^{2}} + b\frac{d\theta}{dt} + \frac{g}{L}\sin\theta = A\cos(\omega t)$$
 
 Where:
-- $\theta(t)$: angular displacement
-- $b$: damping coefficient
--  g : gravitational acceleration
--  L : pendulum length
--  A : amplitude of the external force
--  $\omega$ : frequency of the external force
+- $\theta(t)$: angular displacement  
+- $b$: damping coefficient  
+- $g$: gravitational acceleration  
+- $L$
+$A$: amplitude of the external force  
+- $\omega$: driving frequency
 
 ### Small-Angle Approximation
 
-For small oscillations, where $\theta \ll 1$, we can approximate $\sin(\theta) \approx \theta$, reducing the equation to:
+For small angles ($\theta \ll 1$):
+$$\sin(\theta) \approx \theta$$
 
+Reducing the equation to:
 
-$\frac{d^{2}\theta}{dt^{2}} + b\frac{d\theta}{dt} + \frac{g}{L}\theta = A\cos(\omega t)$
+$$\frac{d^{2}\theta}{dt^{2}} + b\frac{d\theta}{dt} + \frac{g}{L}\theta = A\cos(\omega t)$$
 
-This is the equation of a driven damped harmonic oscillator, a well-studied system with known solutions.
+### Resonance
 
-### Resonance and Energy Considerations
+- Natural frequency: $\omega_0 = \sqrt{\frac{g}{L}}$  
+- Resonance occurs when $\omega \approx \omega_0$
 
-The natural frequency of the system is $\omega_0 = \sqrt{g/L}$. Resonance occurs when the driving frequency $\omega$ is close to $\omega_0$. At resonance, energy input from the external force constructively interferes with the motion, potentially leading to large oscillations if not mitigated by damping.
-
-The energy of the system fluctuates with time, influenced by the driving force and dissipation through damping. Analyzing energy flow helps understand how the system transitions into different dynamical regimes.
+![alt text](image-5.png)
 
 ## 2. Analysis of Dynamics
 
-The behavior of the system changes dramatically depending on the values of:
-- **Damping coefficient** \( b \)
-- **Driving amplitude** \( A \)
-- **Driving frequency** $\omega$
+System behavior varies with:
+- **Damping** $b$
+- **Driving amplitude** $A$
+$\omega$
 
-### Regular vs Chaotic Motion
-
-- **Low Amplitude / High Damping**: Regular, periodic oscillations.
-- **Resonant Driving**: Large-amplitude oscillations, sensitive to initial conditions.
-- **Intermediate Regimes**: Quasiperiodic behavior.
-- **Strong Driving / Low Damping**: Chaotic motion characterized by sensitive dependence on initial conditions and strange attractors.
-
-By examining phase portraits, time series, and Poincaré sections, we can visualize and categorize these different regimes. Bifurcation diagrams reveal how slight changes in parameters can lead to qualitative changes in the system's behavior.
+### Motion Types
+- Low amplitude / high damping → **Regular**
+- Resonant driving → **Large oscillations**
+- Intermediate values → **Quasiperiodic**
+- Strong driving / low damping → **Chaotic**
 
 ## 3. Practical Applications
 
-The forced damped pendulum is more than a theoretical curiosity. It provides a valuable model for many physical systems:
+- Energy harvesting devices (piezoelectric pendulums)
+- Suspension bridge and skyscraper stability
+- Driven RLC circuits (electrical analog)
+- Human biomechanics and rhythmic patterns
 
-- **Energy Harvesting Devices**: Pendulums with piezoelectric elements convert mechanical motion into electrical energy.
-- **Suspension Bridges and Skyscrapers**: Engineers must understand resonant frequencies to prevent catastrophic oscillations.
-- **Oscillating Electrical Circuits**: Driven RLC circuits follow similar equations.
-- **Biomechanics**: Human gait and rhythmic activities can be modeled as driven damped oscillators.
+![alt text](image-6.png)
 
-## 4. Implementation
+![alt text](image-7.png)
+---
+
+## 4. Numerical Implementation and Visualization
+
+We solve the differential equation numerically and visualize time evolution and phase space trajectories under various conditions.
+
+### Common Parameters:
+- $g = 9.81$, $L = 1.0$
+- Initial: $\theta(0) = 0.2$, $\dot{\theta}(0) = 0.0$
+- Time: $t = 0$ to $50$
+
+---
+
+### **Case 1: Pure Pendulum**
+- $b = 0$, $A = 0$
+
+#### Plots:
+- Angle vs Time  
+- Phase Diagram
+![alt text](image-8.png)
 
 
 
+---
+
+### **Case 2: Damped Pendulum**
+- b = 0.5$, $A = 0$
+
+#### Plots:
+- Angle vs Time  
+- Phase Diagram
+
+![alt text](image-9.png)
+
+---
+
+### **Case 3: Driven Pendulum**
+- $b = 0$, $A = 1.2$, $\omega = 2.0$
+
+#### Plots:
+- Angle vs Time  
+- Phase Diagram
+![alt text](image-10.png)
 
 
-### Time Evolution and Phase Diagram
-![alt text](image-3.png)
 
-![alt text](image-4.png)
+---
 
-[colab link](https://colab.research.google.com/drive/1GH6SyOx-kLdMq42tUu6mfLW_oVMXbmcl?usp=sharing)
+### **Case 4: Forced Damped Pendulum – Resonant Motion**
+- $b = 0.2$, $A = 1.2$, 4\omega = 1.5$
 
-For the bifurcation diagram, vary the driving amplitude or frequency and record long-term behavior.
+#### Plots:
+- Angle vs Time  
+- Phase Diagram
+![alt text](image-11.png)
+
+
+
+---
+
+### **Case 5: Forced Damped Pendulum – Chaotic Motion**
+- $b = 0.2$, $A = 1.5$, $\omega = 2.4$
+
+#### Plots:
+- Angle vs Time  
+- Phase Diagram
+![alt text](image-12.png)
+
+
+
+---
 
 ## 5. Conclusion and Future Work
 
-The forced damped pendulum is a rich system that illustrates the complexity emerging from nonlinear differential equations. By studying its behavior through numerical simulations, we uncover a fascinating spectrum of dynamics, from simple harmonic motion to chaos.
+The forced damped pendulum illustrates transitions from regular to chaotic behavior through nonlinearity and sensitivity to parameters.
+
+### Observations:
+- Without damping/forcing: periodic motion
+- Damping: energy loss
+- Driving force: can induce resonance or chaos
+- Full system: rich and complex dynamics
 
 ### Limitations
-- Assumes 2D motion.
-- Damping is modeled linearly.
-- External forcing is purely sinusoidal.
+- 2D motion assumption  
+- Linear damping  
+- Sinusoidal forcing only
 
-### Extensions
-- Introduce nonlinear or velocity-dependent damping.
-- Use non-sinusoidal or stochastic driving forces.
-- Expand to double or coupled pendulums.
+### Possible Extensions
+- Nonlinear or velocity-dependent damping  
+- Non-sinusoidal or stochastic forcing  
+- Coupled/double pendulums  
+- Lyapunov exponents and bifurcation analysis
 
-This study not only deepens our understanding of fundamental physics but also equips us with tools to address real-world challenges across engineering and science disciplines.
+---
 
 
-[colab simulation](https://colab.research.google.com/drive/1H4RI7o1dWtaqi0m2dv8FE1p8UMqy_ItR?usp=sharing)
+
+
+
 
 
 
