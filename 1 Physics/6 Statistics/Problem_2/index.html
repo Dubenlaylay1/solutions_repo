@@ -172,6 +172,153 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-2">Problem 2</h1>
+<h1 id="estimating-using-monte-carlo-methods">Estimating π Using Monte Carlo Methods</h1>
+<h2 id="motivation">Motivation</h2>
+<p>Monte Carlo methods are a class of computational algorithms that rely on repeated random sampling to obtain numerical results. These methods are widely used in physical sciences, finance, engineering, and computer science due to their flexibility and simplicity.</p>
+<p>One of the most elegant and visually intuitive applications of Monte Carlo methods is estimating the value of π. This problem allows us to explore the concepts of probability, geometry, and numerical simulation in an engaging way.</p>
+<p>In this project, we will implement and compare two classic Monte Carlo methods for estimating π:</p>
+<ol>
+<li><strong>Using Geometric Probability with a Circle</strong></li>
+<li><strong>Using the Probabilistic Approach of Buffon's Needle</strong></li>
+</ol>
+<p>Each method uses randomness in a different way, and their comparison provides insight into convergence behavior, computational efficiency, and statistical variability.</p>
+<hr/>
+<h2 id="part-1-estimating-using-a-circle">Part 1: Estimating π Using a Circle</h2>
+<h3 id="1-theoretical-foundation">1. Theoretical Foundation</h3>
+<p>Consider a unit circle (radius = 1) inscribed in a square with side length 2 (from -1 to 1 in both x and y directions). The area of the circle is <span class="arithmatex">\( A_{\text{circle}} = \pi r^2 = \pi \)</span>, and the area of the square is <span class="arithmatex">\( A_{\text{square}} = 4 \)</span>.</p>
+<p>If we randomly generate points within the square, the proportion of points that fall inside the circle should approximate the ratio of the areas:</p>
+<div class="arithmatex">\[
+\frac{\text{Points inside the circle}}{\text{Total points}} \approx \frac{\pi}{4}
+\]</div>
+<p>Therefore, multiplying both sides by 4 gives us an estimate for π:</p>
+<div class="arithmatex">\[
+π ≈ 4 \cdot \frac{\text{Points inside the circle}}{\text{Total points}}
+\]</div>
+<p>This approach leverages the <strong>Law of Large Numbers</strong>, which states that the average of results from a large number of trials should be close to the expected value.</p>
+<h3 id="2-simulation-procedure">2. Simulation Procedure</h3>
+<ul>
+<li>Generate <span class="arithmatex">\( n \)</span> random (x, y) points uniformly distributed within the square <span class="arithmatex">\([-1, 1] \times [-1, 1]\)</span>.</li>
+<li>For each point, check whether it lies inside the unit circle using the condition <span class="arithmatex">\( x^2 + y^2 \leq 1 \)</span>.</li>
+<li>Count the number of points that fall inside the circle.</li>
+<li>Estimate π using the formula above.</li>
+</ul>
+<h3 id="3-visualization">3. Visualization</h3>
+<ul>
+<li>Create a scatter plot:</li>
+<li><strong>Blue points</strong> represent those that fall inside the circle.</li>
+<li><strong>Red points</strong> represent those that fall outside.</li>
+<li>Optionally, draw the outline of the circle for reference.</li>
+</ul>
+<p><img alt="alt text" src="../image-8.png"/></p>
+<h3 id="4-analysis-and-discussion">4. Analysis and Discussion</h3>
+<ul>
+<li>Analyze the accuracy of the π estimate as a function of the number of points.</li>
+<li>Plot a graph showing how the estimate converges to the true value of π as <span class="arithmatex">\( n \)</span> increases.</li>
+<li>Evaluate how many points are needed to achieve 2 or 3 decimal places of accuracy.</li>
+<li>Discuss:</li>
+<li>Variance of the estimate.</li>
+<li>Trade-offs between computational cost and precision.</li>
+<li>Strengths and limitations of this approach.</li>
+</ul>
+<p><img alt="alt text" src="../image-9.png"/></p>
+<hr/>
+<h2 id="part-2-estimating-using-buffons-needle">Part 2: Estimating π Using Buffon's Needle</h2>
+<h3 id="1-theoretical-foundation_1">1. Theoretical Foundation</h3>
+<p>Buffon's Needle is a classical problem in geometric probability, proposed in the 18th century. It involves dropping a needle of length <span class="arithmatex">\( L \)</span> onto a plane ruled with parallel lines spaced a distance <span class="arithmatex">\( D \)</span> apart.</p>
+<p>The probability <span class="arithmatex">\( P \)</span> that the needle crosses a line is given by:</p>
+<div class="arithmatex">\[
+P = \frac{2L}{πD}
+\]</div>
+<p>Rearranging this gives a formula to estimate π:</p>
+<div class="arithmatex">\[
+π ≈ \frac{2L \cdot n}{D \cdot c}
+\]</div>
+<p>Where:
+- <span class="arithmatex">\( n \)</span> is the number of needle drops,
+- <span class="arithmatex">\( c \)</span> is the number of times the needle crosses a line.</p>
+<p>Assuming <span class="arithmatex">\( L \leq D \)</span> simplifies the problem and ensures correctness of the formula.</p>
+<h3 id="2-simulation-procedure_1">2. Simulation Procedure</h3>
+<ul>
+<li>Set values for <span class="arithmatex">\( L \)</span> and <span class="arithmatex">\( D \)</span> such that <span class="arithmatex">\( L \leq D \)</span> (e.g., <span class="arithmatex">\( L = 1 \)</span>, <span class="arithmatex">\( D = 2 \)</span>).</li>
+<li>For each needle drop:</li>
+<li>Randomly generate a center point of the needle along the y-axis.</li>
+<li>Randomly generate an angle <span class="arithmatex">\( θ \)</span> between 0 and π.</li>
+<li>Determine the positions of the needle’s two ends.</li>
+<li>Check whether the needle crosses a line.</li>
+<li>Count total drops and total crossings.</li>
+<li>Estimate π using the derived formula.</li>
+</ul>
+<p><img alt="alt text" src="../image-10.png"/></p>
+<h3 id="3-visualization_1">3. Visualization</h3>
+<ul>
+<li>Create a diagram showing the positions of dropped needles.</li>
+<li><strong>Crossing needles</strong> can be shown in one color (e.g., green).</li>
+<li><strong>Non-crossing needles</strong> can be shown in another (e.g., gray).</li>
+<li>Overlay the parallel lines to clearly visualize the setup.</li>
+</ul>
+<h3 id="4-analysis-and-discussion_1">4. Analysis and Discussion</h3>
+<ul>
+<li>Investigate the convergence of the π estimate with increasing number of trials.</li>
+<li>Plot π estimates versus number of drops.</li>
+<li>Compare statistical noise and variance with the circle-based method.</li>
+<li>Discuss practical difficulties:</li>
+<li>Lower probability of crossing results in slower convergence.</li>
+<li>Higher variance, especially for small numbers of drops.</li>
+<li>Computational complexity of checking line intersections.</li>
+</ul>
+<hr/>
+<h2 id="comparison-of-the-two-methods">Comparison of the Two Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Criteria</th>
+<th>Circle-Based Method</th>
+<th>Buffon’s Needle Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Conceptual Simplicity</strong></td>
+<td>Simple geometric check</td>
+<td>Involves trigonometry</td>
+</tr>
+<tr>
+<td><strong>Convergence Speed</strong></td>
+<td>Faster</td>
+<td>Slower (high variance)</td>
+</tr>
+<tr>
+<td><strong>Code Complexity</strong></td>
+<td>Low</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td><strong>Accuracy per Trial</strong></td>
+<td>Generally higher</td>
+<td>Lower due to randomness in angles</td>
+</tr>
+<tr>
+<td><strong>Visual Appeal</strong></td>
+<td>High (clean points in/out)</td>
+<td>Medium (depends on needle layout)</td>
+</tr>
+<tr>
+<td><strong>Historical Significance</strong></td>
+<td>Modern method</td>
+<td>Classical, dating to 1700s</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="conclusion">Conclusion</h2>
+<p>Both Monte Carlo methods effectively demonstrate how randomness can be used to estimate a fundamental constant like π. While the circle-based method tends to be more efficient and accurate with fewer samples, Buffon's Needle offers a fascinating historical and theoretical perspective. By analyzing convergence, computational cost, and visualization, we gain a deeper understanding of the strengths and trade-offs of probabilistic simulations.</p>
+<hr/>
+<h2 id="references">References</h2>
+<ul>
+<li>Monte Carlo Methods in Practice, Springer (1998)</li>
+<li>Buffon, G.-L. (1777). Essai d'Arithmétique Morale.</li>
+<li>Higham, D. (2008). <em>Modeling and Simulating Random Processes.</em> SIAM.</li>
+</ul>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
