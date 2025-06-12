@@ -1,4 +1,4 @@
-# Problem 2: Investigating the Dynamics of a Forced Damped Pendulum
+
 # Problem 2: Investigating the Dynamics of a Forced Damped Pendulum
 
 ## Motivation
