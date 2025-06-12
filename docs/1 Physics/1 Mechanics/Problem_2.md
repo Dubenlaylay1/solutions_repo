@@ -88,7 +88,7 @@ We solve the differential equation numerically and visualize time evolution and 
 ---
 
 ### **Case 2: Damped Pendulum**
-- b = 0.5$, $A = 0$
+- $b = 0.5$, $A = 0$
 
 #### Plots:
 - Angle vs Time  
